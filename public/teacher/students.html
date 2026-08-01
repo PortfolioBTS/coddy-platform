@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ученики · Классный журнал</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <nav class="app-nav" id="app-nav"></nav>
+
+  <div class="wrap wrap--wide">
+    <div class="page-head">
+      <div>
+        <p class="page-head__eyebrow">Раздел · Ученики</p>
+        <h1 class="page-head__title">Ученики</h1>
+        <p class="page-head__desc">Все зарегистрированные ученики платформы. Подключайте их к курсам в настройках курса.</p>
+      </div>
+    </div>
+    <div class="controls" id="controls" hidden>
+      <div class="controls__row">
+        <input class="controls__search" type="text" id="search-input" placeholder="Поиск по имени, фамилии, телефону или почте…">
+      </div>
+      <div class="controls__row">
+        <span class="controls__label">Фильтр по городу</span>
+        <select class="controls__select" id="city-filter">
+          <option value="all">Все города</option>
+        </select>
+      </div>
+      <span class="controls__label" id="students-count"></span>
+    </div>
+    <div id="content"><p class="muted">Загрузка…</p></div>
+  </div>
+
+
+  <script src="/js/utils.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/app-shell.js"></script>
+  <script src="/js/pages/teacher-students.js"></script>
+</body>
+</html>

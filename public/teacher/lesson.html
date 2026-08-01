@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="page-title">Урок · Классный журнал</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <nav class="app-nav" id="app-nav"></nav>
+
+  <div class="wrap">
+    <a class="back-link" id="back-link" href="/teacher/courses.html">← Курс</a>
+    <div id="content"><p class="muted">Загрузка…</p></div>
+  </div>
+
+  <div class="modal-overlay" id="delete-modal" hidden>
+    <div class="modal" role="dialog" aria-modal="true">
+      <span class="modal__ribbon">×</span>
+      <button class="modal__close" type="button" data-modal-close>✕ Закрыть</button>
+      <h2 class="modal__title">Удалить урок?</h2>
+      <p class="modal__meta" id="delete-modal-meta">Это действие необратимо.</p>
+      <form class="form" id="delete-form" style="padding: 4px 4px 8px;">
+        <ul class="error-list" data-role="delete-errors" hidden></ul>
+        <div class="field">
+          <label class="field__label" for="confirmText">Чтобы подтвердить, введите слово «УДАЛИТЬ»</label>
+          <input class="input" type="text" id="confirmText" name="confirmText" autocomplete="off" placeholder="УДАЛИТЬ">
+        </div>
+        <div class="form-actions">
+          <button class="btn btn--danger" type="submit">Удалить урок безвозвратно</button>
+          <button class="btn btn--ghost" type="button" data-modal-close>Отмена</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  <script src="/js/utils.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/app-shell.js"></script>
+  <script src="/js/ui.js"></script>
+  <script src="/js/pages/teacher-lesson.js"></script>
+</body>
+</html>

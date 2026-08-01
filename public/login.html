@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Вход · Классный журнал</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <header class="hero">
+    <div class="hero__halftone"></div>
+    <div class="hero__stripe"></div>
+    <div class="hero__inner">
+      <p class="hero__eyebrow">Классный журнал</p>
+      <h1 class="hero__title">Добро пожаловать<span class="hero__title-sub">ВОЙДИТЕ В СВОЙ КАБИНЕТ</span></h1>
+      <p class="hero__desc">Курсы, уроки, домашние задания и работы учеников — всё в одной ведомости.</p>
+    </div>
+  </header>
+
+  <div class="auth-card-wrap">
+    <div class="auth-card">
+      <h2 class="auth-card__title">Вход</h2>
+      <p class="auth-card__sub">Введите почту и пароль, указанные при регистрации</p>
+
+      <ul class="error-list" id="form-errors" hidden></ul>
+
+      <form class="form" id="login-form">
+        <div class="field">
+          <label class="field__label" for="email">Электронная почта</label>
+          <input class="input" type="email" id="email" name="email" required autofocus>
+        </div>
+        <div class="field">
+          <label class="field__label" for="password">Пароль</label>
+          <input class="input" type="password" id="password" name="password" required>
+        </div>
+        <div class="form-actions">
+          <button class="btn btn--red btn--block" type="submit">Войти</button>
+        </div>
+      </form>
+
+      <p class="auth-switch">Ещё нет аккаунта? <a href="/register.html">Зарегистрироваться</a></p>
+    </div>
+  </div>
+
+
+  <script src="/js/utils.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/pages/login.js"></script>
+</body>
+</html>

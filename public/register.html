@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Регистрация · Классный журнал</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <header class="hero">
+    <div class="hero__halftone"></div>
+    <div class="hero__stripe"></div>
+    <div class="hero__inner">
+      <p class="hero__eyebrow">Классный журнал · новая запись</p>
+      <h1 class="hero__title">Регистрация<span class="hero__title-sub">ВЫБЕРИТЕ РОЛЬ И ЗАПОЛНИТЕ КАРТОЧКУ</span></h1>
+      <p class="hero__desc">Учитель ведёт курсы и проверяет работы. Ученик подключается к курсам и сдаёт задания. Роль нельзя изменить позже, выбирайте внимательно.</p>
+    </div>
+  </header>
+
+  <div class="auth-card-wrap">
+    <div class="auth-card">
+      <h2 class="auth-card__title">Создать аккаунт</h2>
+      <p class="auth-card__sub">Все поля обязательны для заполнения</p>
+
+      <ul class="error-list" id="form-errors" hidden></ul>
+
+      <form class="form" id="register-form">
+        <div class="field">
+          <span class="field__label">Роль</span>
+          <div class="role-switch">
+            <div class="role-switch__option">
+              <input class="role-switch__input" type="radio" name="role" id="role-student" value="student" checked>
+              <label class="role-switch__label" for="role-student"><span class="role-switch__icon">🎓</span> Ученик</label>
+            </div>
+            <div class="role-switch__option">
+              <input class="role-switch__input" type="radio" name="role" id="role-teacher" value="teacher">
+              <label class="role-switch__label" for="role-teacher"><span class="role-switch__icon">🏫</span> Учитель</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="field">
+            <label class="field__label" for="firstName">Имя</label>
+            <input class="input" type="text" id="firstName" name="firstName" required>
+          </div>
+          <div class="field">
+            <label class="field__label" for="lastName">Фамилия</label>
+            <input class="input" type="text" id="lastName" name="lastName" required>
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="field">
+            <label class="field__label" for="city">Город</label>
+            <select class="select" id="city" name="city" required>
+              <option value="">Выберите город</option>
+              <option value="Адлер">Адлер</option>
+              <option value="Армавир">Армавир</option>
+              <option value="Ессентуки">Ессентуки</option>
+              <option value="Кисловодск">Кисловодск</option>
+              <option value="Краснодар">Краснодар</option>
+              <option value="Минводы">Минводы</option>
+              <option value="Невинномысск">Невинномысск</option>
+              <option value="Пятигорск">Пятигорск</option>
+              <option value="Сочи">Сочи</option>
+              <option value="Ставрополь">Ставрополь</option>
+            </select>
+          </div>
+          <div class="field">
+            <label class="field__label" for="phone">Номер телефона</label>
+            <input class="input" type="tel" id="phone" name="phone" inputmode="numeric" pattern="[\d+\-() ]{5,20}" placeholder="+7 (___) ___-__-__" maxlength="20" required>
+          </div>
+        </div>
+
+        <div class="field" id="birth-field" hidden>
+          <label class="field__label" for="birthDate">Дата рождения</label>
+          <input type="hidden" id="birthDate" name="birthDate">
+          <button type="button" class="datepicker" id="datepicker-trigger">
+            <span class="datepicker__placeholder" id="datepicker-label">Выберите дату</span>
+            <span class="datepicker__icon">📅</span>
+          </button>
+          <div class="datepicker-popup" id="datepicker-popup" hidden></div>
+          <span class="field__hint">Необязательно, возраст отобразится в профиле</span>
+        </div>
+
+        <div class="field">
+          <label class="field__label" for="email">Электронная почта</label>
+          <input class="input" type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-grid">
+          <div class="field">
+            <label class="field__label" for="password">Пароль</label>
+            <input class="input" type="password" id="password" name="password" minlength="6" required>
+            <span class="field__hint">Не короче 6 символов</span>
+          </div>
+          <div class="field">
+            <label class="field__label" for="passwordConfirm">Повтор пароля</label>
+            <input class="input" type="password" id="passwordConfirm" name="passwordConfirm" minlength="6" required>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button class="btn btn--red btn--block" type="submit">Зарегистрироваться</button>
+        </div>
+      </form>
+
+      <p class="auth-switch">Уже есть аккаунт? <a href="/login.html">Войти</a></p>
+    </div>
+  </div>
+
+
+  <script src="/js/utils.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/datepicker.js"></script>
+  <script src="/js/pages/register.js"></script>
+</body>
+</html>

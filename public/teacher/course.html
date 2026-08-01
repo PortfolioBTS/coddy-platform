@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="page-title">Курс · Классный журнал</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <nav class="app-nav" id="app-nav"></nav>
+
+  <div class="wrap">
+    <a class="back-link" href="/teacher/courses.html">← Все курсы</a>
+
+    <div id="content"><p class="muted">Загрузка…</p></div>
+  </div>
+
+  <!-- Модалка удаления курса -->
+  <div class="modal-overlay" id="delete-modal" hidden>
+    <div class="modal" role="dialog" aria-modal="true">
+      <span class="modal__ribbon">×</span>
+      <button class="modal__close" type="button" data-modal-close>✕ Закрыть</button>
+      <h2 class="modal__title">Удалить курс?</h2>
+      <p class="modal__meta" id="delete-modal-meta">Это действие необратимо и удалит все уроки, задания и сданные работы курса.</p>
+      <form class="form" id="delete-form" style="padding: 4px 4px 8px;">
+        <ul class="error-list" data-role="delete-errors" hidden></ul>
+        <div class="field">
+          <label class="field__label" for="confirmText">Чтобы подтвердить, введите слово «УДАЛИТЬ»</label>
+          <input class="input" type="text" id="confirmText" name="confirmText" autocomplete="off" placeholder="УДАЛИТЬ">
+        </div>
+        <div class="form-actions">
+          <button class="btn btn--danger" type="submit">Удалить курс безвозвратно</button>
+          <button class="btn btn--ghost" type="button" data-modal-close>Отмена</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Модалка управления учениками -->
+  <div class="modal-overlay" id="students-modal" hidden>
+    <div class="modal" role="dialog" aria-modal="true">
+      <span class="modal__ribbon">👥</span>
+      <button class="modal__close" type="button" data-modal-close>✕ Закрыть</button>
+      <h2 class="modal__title">Ученики курса</h2>
+      <p class="modal__meta">Отметьте, кто должен иметь доступ ко всем урокам и заданиям этого курса</p>
+      <div style="margin: 0 4px 14px 24px;">
+        <input class="input" type="text" id="students-search" placeholder="Поиск ученика по имени или городу…">
+      </div>
+      <ul class="error-list" id="students-errors" hidden></ul>
+      <div class="modal__scroll">
+        <div class="checkbox-grid checkbox-grid--list" id="students-checkbox-grid">
+          <span class="checkbox-grid__empty">Загрузка…</span>
+        </div>
+      </div>
+      <div class="form-actions" style="padding: 12px 4px 4px;">
+        <button class="btn btn--red" type="button" id="save-students-btn">Сохранить список</button>
+        <button class="btn btn--ghost" type="button" data-modal-close>Отмена</button>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="/js/utils.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/app-shell.js"></script>
+  <script src="/js/ui.js"></script>
+  <script src="/js/pages/teacher-course.js"></script>
+</body>
+</html>

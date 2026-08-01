@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CODDYSHOP · Классный журнал</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <nav class="app-nav" id="app-nav"></nav>
+
+  <div class="wrap">
+    <div class="page-head">
+      <div>
+        <p class="page-head__eyebrow">Магазин</p>
+        <h1 class="page-head__title">CODDYSHOP</h1>
+        <p class="page-head__desc">Товары и игры за коддикоины</p>
+      </div>
+    </div>
+
+    <div class="controls" id="shop-controls">
+      <div class="controls__row">
+        <input class="controls__search" id="shop-search" placeholder="Поиск товаров...">
+      </div>
+      <div class="controls__row">
+        <span class="controls__label">Категория</span>
+        <select class="controls__select" id="category-filter">
+          <option value="all">Все категории</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="item-grid" id="product-grid"></div>
+  </div>
+
+  <div class="modal-overlay" hidden id="order-modal">
+    <div class="modal">
+      <button class="modal__close" id="modal-close">&times;</button>
+      <div class="modal__ribbon" id="modal-price">0</div>
+      <h2 class="modal__title" id="modal-title">Товар</h2>
+      <p class="modal__meta" id="modal-category"></p>
+      <div class="modal__scroll">
+        <form class="form" id="order-form">
+          <p class="field">
+            <label class="field__label">Имя</label>
+            <input class="input" id="order-firstname" readonly>
+          </p>
+          <p class="field">
+            <label class="field__label">Фамилия</label>
+            <input class="input" id="order-lastname" readonly>
+          </p>
+          <p class="field" id="field-city">
+            <label class="field__label">Город</label>
+            <input class="input" id="order-city" readonly>
+          </p>
+          <p class="field">
+            <label class="field__label">Телефон</label>
+            <input class="input" id="order-phone" type="tel" inputmode="numeric" pattern="[\d+\-() ]{5,20}" placeholder="+7 (___) ___-__-__" maxlength="20">
+          </p>
+          <p class="field" id="field-size" hidden>
+            <label class="field__label">Размер</label>
+            <select class="select" id="order-size">
+              <option value="">Выберите размер</option>
+            </select>
+          </p>
+          <p class="field" id="field-steam" hidden>
+            <label class="field__label">Steam-код дружбы</label>
+            <input class="input" id="order-steam" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="8" placeholder="Код дружбы, только цифры">
+          </p>
+          <ul class="error-list" id="order-errors" hidden></ul>
+          <div class="form-actions">
+            <button class="btn btn--red btn--block" type="submit" id="order-submit">Оформить заказ</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/utils.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/app-shell.js"></script>
+  <script src="/js/pages/shop.js"></script>
+</body>
+</html>
