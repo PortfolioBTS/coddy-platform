@@ -2,8 +2,11 @@
   const user = await bootPage('teacher');
   if (!user) return;
 
+<<<<<<< HEAD
   const isDirector = user.role === 'director';
 
+=======
+>>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
   const content = document.getElementById('content');
   const controls = document.getElementById('controls');
   const searchInput = document.getElementById('search-input');
@@ -73,9 +76,15 @@
     content.innerHTML = `
       <div class="panel students-panel">
         <span class="panel__tab">Список учеников</span>
+<<<<<<< HEAD
         <div class="table-scroll">
           <table class="table students-table">
             <thead><tr><th>Имя</th><th>Фамилия</th><th>Город</th><th>Контакты</th><th>Пароль</th><th>Возраст</th><th>Дата рег.</th><th>Коддикоины</th><th></th></tr></thead>
+=======
+        <div>
+          <table class="table students-table">
+            <thead><tr><th>Имя</th><th>Фамилия</th><th>Город</th><th>Телефон</th><th>Почта</th><th>Возраст</th><th>Дата рег.</th><th>Коддикоины</th><th></th></tr></thead>
+>>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
             <tbody>${students.map((s) => {
               const balance = balances[s.id];
               const balanceCell = balance != null
@@ -86,11 +95,16 @@
                 <td class="cell-title">${escapeHtml(s.firstName)}</td>
                 <td>${escapeHtml(s.lastName)}</td>
                 <td>${escapeHtml(s.city)}</td>
+<<<<<<< HEAD
                 <td class="contacts-cell">
                   <span class="contacts-phone">${escapeHtml(s.phone)}</span>
                   <span class="contacts-email">${escapeHtml(s.email)}</span>
                 </td>
                 <td class="cell-year">${escapeHtml(s.plainPassword || '—')}</td>
+=======
+                <td class="cell-year">${escapeHtml(s.phone)}</td>
+                <td>${escapeHtml(s.email)}</td>
+>>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
                 <td class="cell-year">${age != null ? age : '—'}</td>
                 <td>${formatDate(s.createdAt)}</td>
                 <td style="text-align:center;">${balanceCell}</td>
@@ -118,6 +132,7 @@
       });
     });
   }
+<<<<<<< HEAD
 
   // ---------- Импорт учеников (только для директора) ----------
   if (isDirector) {
@@ -221,4 +236,6 @@
       window.location.reload();
     });
   }
+=======
+>>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
 })();

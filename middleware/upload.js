@@ -139,6 +139,7 @@ const homeworkUpload = build({ files: HOMEWORK_ANSWER_EXT }, HOMEWORK_ANSWER_EXT
   { name: 'files', maxCount: HOMEWORK_ANSWER_MAX_FILES },
 ]);
 
+<<<<<<< HEAD
 // Блок «Проект ребёнка» в отзыве обратной связи — учитель прикладывает
 // скриншоты/файлы работы ученика. Разрешаем обычные форматы + архивы.
 const FEEDBACK_PROJECT_EXT = ALL_ALLOWED_EXT.concat(ARCHIVE_EXT);
@@ -147,17 +148,25 @@ const feedbackUpload = build({ projectFiles: FEEDBACK_PROJECT_EXT }, FEEDBACK_PR
   { name: 'projectFiles', maxCount: FEEDBACK_PROJECT_MAX_FILES },
 ]);
 
+=======
+>>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
 module.exports = {
   courseUpload,
   lessonUpload,
   homeworkUpload,
+<<<<<<< HEAD
   feedbackUpload,
+=======
+>>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
   MAX_FILE_SIZE,
   ALL_ALLOWED_EXT,
   HOMEWORK_ANSWER_EXT,
   HOMEWORK_ANSWER_MAX_FILES,
+<<<<<<< HEAD
   FEEDBACK_PROJECT_EXT,
   FEEDBACK_PROJECT_MAX_FILES,
+=======
+>>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
   IMAGE_EXT,
   VIDEO_EXT,
   ARCHIVE_EXT,

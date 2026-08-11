@@ -64,10 +64,14 @@
         <div>
           <p class="page-head__eyebrow">Уроки (${lessons.length})</p>
         </div>
+<<<<<<< HEAD
         <div class="form-actions">
           <button class="btn btn--sm" type="button" id="copy-lesson-btn">+ Из своих уроков</button>
           <a class="btn btn--red btn--sm" href="/teacher/lesson-form.html?courseId=${encodeURIComponent(course.id)}">+ Добавить урок</a>
         </div>
+=======
+        <a class="btn btn--red btn--sm" href="/teacher/lesson-form.html?courseId=${encodeURIComponent(course.id)}">+ Добавить урок</a>
+>>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
       </div>
       ${lessons.length ? `<div class="item-grid">${lessons.map(lessonCardHtml).join('')}</div>` : `
         <div class="empty-state">
@@ -83,7 +87,10 @@
     initModals();
     setupDelete();
     setupStudentsModal();
+<<<<<<< HEAD
     setupCopyLesson();
+=======
+>>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
   }
 
   function lessonCardHtml(lesson) {
@@ -186,6 +193,7 @@
       }
     };
   }
+<<<<<<< HEAD
   function setupCopyLesson() {
     const btn = document.getElementById('copy-lesson-btn');
     if (!btn) return;
@@ -325,4 +333,6 @@
       }
     });
   }
+=======
+>>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
 })();

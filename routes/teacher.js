@@ -2,12 +2,16 @@
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
+<<<<<<< HEAD
 const crypto = require('crypto');
+=======
+>>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
 
 const coursesDb = require('../db/courses');
 const lessonsDb = require('../db/lessons');
 const homeworksDb = require('../db/homeworks');
 const submissionsDb = require('../db/submissions');
+<<<<<<< HEAD
 const testsDb = require('../db/tests');
 const testAttemptsDb = require('../db/testAttempts');
 const usersDb = require('../db/users');
@@ -17,6 +21,12 @@ const gforms = require('../utils/gforms');
 const { computeTestStats } = require('../utils/testStats');
 const alfacrm = require('../alfacrm');
 const telegram = require('../services/telegram');
+=======
+const usersDb = require('../db/users');
+const { requireAuth, requireRole } = require('../middleware/auth');
+const { courseUpload, lessonUpload, UPLOAD_DIR } = require('../middleware/upload');
+const alfacrm = require('../alfacrm');
+>>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
 
 const router = express.Router();
 
@@ -27,6 +37,7 @@ function removeFile(filename) {
   fs.unlink(path.join(UPLOAD_DIR, filename), () => {});
 }
 
+<<<<<<< HEAD
 // Копирует файл в uploads с новым именем. Если файл не найден — возвращает
 // null (для необязательных файлов) или исходное имя (для критичных ссылок).
 function copyFileToUploads(filename) {
@@ -77,6 +88,11 @@ function cloneTestData(test) {
 function ownCourse(req, res) {
   const course = coursesDb.getById(req.params.id);
   if (!course || (course.teacherId !== req.user.id && req.user.role !== 'director')) {
+=======
+function ownCourse(req, res) {
+  const course = coursesDb.getById(req.params.id);
+  if (!course || course.teacherId !== req.user.id) {
+>>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
     res.status(404).json({ message: 'Курс не найден.' });
     return null;
   }
@@ -85,13 +101,18 @@ function ownCourse(req, res) {
 
 function ownLesson(req, res) {
   const lesson = lessonsDb.getById(req.params.id);
+<<<<<<< HEAD
   if (!lesson || (lesson.teacherId !== req.user.id && req.user.role !== 'director')) {
+=======
+  if (!lesson || lesson.teacherId !== req.user.id) {
+>>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
     res.status(404).json({ message: 'Урок не найден.' });
     return null;
   }
   return lesson;
 }
 
+<<<<<<< HEAD
 // Приводит входящий массив вопросов к безопасному виду: генерирует id, чистит
 // строки, оставляет только валидные варианты и правильные ответы.
 function normalizeQuestions(raw) {
@@ -149,6 +170,8 @@ function testSummary(test, course) {
   return computeTestStats(test, students);
 }
 
+=======
+>>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
 function courseSummary(course) {
   return {
     ...course,
@@ -263,6 +286,7 @@ router.post('/api/teacher/courses/:id/delete', (req, res) => {
       });
       homeworksDb.remove(homework.id);
     }
+<<<<<<< HEAD
 
     const test = testsDb.getByLesson(lesson.id);
     if (test) {
@@ -270,6 +294,8 @@ router.post('/api/teacher/courses/:id/delete', (req, res) => {
       testsDb.remove(test.id);
     }
 
+=======
+>>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
     lessonsDb.remove(lesson.id);
   });
 
@@ -279,6 +305,7 @@ router.post('/api/teacher/courses/:id/delete', (req, res) => {
 
 // ---------- Уроки ----------
 
+<<<<<<< HEAD
 // Все уроки педагога (для копирования в другие курсы), с названием курса-источника.
 router.get('/api/teacher/lessons', (req, res) => {
   const lessons = lessonsDb.listByTeacher(req.user.id).map((l) => {
@@ -292,6 +319,8 @@ router.get('/api/teacher/lessons', (req, res) => {
   res.json({ lessons });
 });
 
+=======
+>>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
 router.post('/api/teacher/courses/:id/lessons', lessonUpload, (req, res) => {
   const course = ownCourse(req, res);
   if (!course) return;
@@ -335,6 +364,7 @@ router.post('/api/teacher/courses/:id/lessons', lessonUpload, (req, res) => {
   // сразу могут сдавать ответ — отдельного шага «Добавить задание» больше нет.
   homeworksDb.ensureForLesson(lesson);
 
+<<<<<<< HEAD
   // Уведомляем привязанных в Telegram учеников курса о новом уроке с ДЗ.
   // Отправка идёт в фоне и не должна ломать сам ответ на запрос.
   const courseTitle = course.title || 'Курс';
@@ -349,6 +379,8 @@ router.post('/api/teacher/courses/:id/lessons', lessonUpload, (req, res) => {
     }
   });
 
+=======
+>>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
   res.status(201).json({ lesson });
 });
 
@@ -357,9 +389,13 @@ router.get('/api/teacher/lessons/:id', (req, res) => {
   if (!lesson) return;
   const course = coursesDb.getById(lesson.courseId);
   const { homework, rows } = submissionRowsFor(lesson);
+<<<<<<< HEAD
   const test = testsDb.getByLesson(lesson.id);
   const testStats = test ? testSummary(test, course) : null;
   res.json({ lesson, course, homework, submissionRows: rows, test: test || null, testStats });
+=======
+  res.json({ lesson, course, homework, submissionRows: rows });
+>>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
 });
 
 router.put('/api/teacher/lessons/:id', lessonUpload, (req, res) => {
@@ -422,6 +458,7 @@ router.put('/api/teacher/lessons/:id', lessonUpload, (req, res) => {
   res.json({ lesson: updated });
 });
 
+<<<<<<< HEAD
 // Копирование урока в другой курс (вместе с файлами и тестом).
 // Источником может быть любой урок педагога; цель — курс, где он преподаватель.
 router.post('/api/teacher/courses/:id/lessons/copy', (req, res) => {
@@ -453,6 +490,8 @@ router.post('/api/teacher/courses/:id/lessons/copy', (req, res) => {
   res.status(201).json({ lesson });
 });
 
+=======
+>>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
 router.post('/api/teacher/lessons/:id/delete', (req, res) => {
   const lesson = ownLesson(req, res);
   if (!lesson) return;
@@ -473,16 +512,20 @@ router.post('/api/teacher/lessons/:id/delete', (req, res) => {
     homeworksDb.remove(homework.id);
   }
 
+<<<<<<< HEAD
   const test = testsDb.getByLesson(lesson.id);
   if (test) {
     testAttemptsDb.removeByTest(test.id);
     testsDb.remove(test.id);
   }
 
+=======
+>>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
   lessonsDb.remove(lesson.id);
   res.json({ ok: true });
 });
 
+<<<<<<< HEAD
 // ---------- Тесты ----------
 
 function ownLessonTest(req, res) {
@@ -622,12 +665,18 @@ router.get('/api/teacher/tests/:id', (req, res) => {
   res.json({ test, lesson, course, testStats: testSummary(test, course) });
 });
 
+=======
+>>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
 // ---------- Работы учеников ----------
 
 router.get('/api/teacher/submissions/:id', (req, res) => {
   const submission = submissionsDb.getById(req.params.id);
   const homework = submission && homeworksDb.getById(submission.homeworkId);
+<<<<<<< HEAD
   if (!submission || !homework || (homework.teacherId !== req.user.id && req.user.role !== 'director')) {
+=======
+  if (!submission || !homework || homework.teacherId !== req.user.id) {
+>>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
     return res.status(404).json({ message: 'Такой сданной работы не существует.' });
   }
   const student = usersDb.getById(submission.studentId);
@@ -639,7 +688,11 @@ router.get('/api/teacher/submissions/:id', (req, res) => {
 router.post('/api/teacher/submissions/:id/comment', (req, res) => {
   const submission = submissionsDb.getById(req.params.id);
   const homework = submission && homeworksDb.getById(submission.homeworkId);
+<<<<<<< HEAD
   if (!submission || !homework || (homework.teacherId !== req.user.id && req.user.role !== 'director')) {
+=======
+  if (!submission || !homework || homework.teacherId !== req.user.id) {
+>>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
     return res.status(404).json({ message: 'Такой сданной работы не существует.' });
   }
   const updated = submissionsDb.update(submission.id, {

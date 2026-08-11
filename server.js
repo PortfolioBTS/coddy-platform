@@ -4,6 +4,7 @@ const fs = require('fs');
 const express = require('express');
 const session = require('express-session');
 
+<<<<<<< HEAD
 // Загрузка файла .env в process.env (простой парсер, без внешних зависимостей).
 // Файл лежит рядом и содержит секреты — не должен попадать в git.
 const ENV_PATH = path.join(__dirname, '.env');
@@ -16,10 +17,13 @@ if (fs.existsSync(ENV_PATH)) {
   });
 }
 
+=======
+>>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
 const { loadUser } = require('./middleware/auth');
 const authRoutes = require('./routes/auth');
 const teacherRoutes = require('./routes/teacher');
 const studentRoutes = require('./routes/student');
+<<<<<<< HEAD
 const parentRoutes = require('./routes/parent');
 const feedbackRoutes = require('./routes/feedback');
 const directorRoutes = require('./routes/director');
@@ -28,13 +32,22 @@ const filesRoutes = require('./routes/files');
 const alfacrmRoutes = require('./routes/alfacrm');
 const shopRoutes = require('./routes/shop');
 const telegram = require('./services/telegram');
+=======
+const filesRoutes = require('./routes/files');
+const alfacrmRoutes = require('./routes/alfacrm');
+const shopRoutes = require('./routes/shop');
+>>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(express.urlencoded({ extended: true }));
+<<<<<<< HEAD
 // Большой лимит нужен для загрузки PNG-сертификатов (base64 в JSON).
 app.use(express.json({ limit: '25mb' }));
+=======
+app.use(express.json());
+>>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
 
 // Инъекция темы во все HTML: перехватываем HTML-запросы до статики
 app.get(['/', '/*.html'], (req, res, next) => {
@@ -45,7 +58,10 @@ app.get(['/', '/*.html'], (req, res, next) => {
   let body = fs.readFileSync(filePath, 'utf-8');
   body = body.replace(
     '</head>',
+<<<<<<< HEAD
     '<link rel="icon" type="image/svg+xml" href="/favicon.svg">' +
+=======
+>>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
     '<script>try{var t=localStorage.getItem("coddy-theme");if(t==="dark")t="gray";if(!t)t="light";document.documentElement.setAttribute("data-theme",t)}catch(e){}</script></head>'
   );
   res.type('html').send(body);
@@ -68,10 +84,13 @@ app.use(loadUser);
 app.use('/', authRoutes);
 app.use('/', teacherRoutes);
 app.use('/', studentRoutes);
+<<<<<<< HEAD
 app.use('/', parentRoutes);
 app.use('/', feedbackRoutes);
 app.use('/', directorRoutes);
 app.use('/', notificationsRoutes);
+=======
+>>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
 app.use('/', filesRoutes);
 app.use('/', alfacrmRoutes);
 app.use('/', shopRoutes);
@@ -106,6 +125,7 @@ app.use((err, req, res, next) => {
 
 app.listen(PORT, () => {
   console.log(`Образовательная платформа запущена: http://localhost:${PORT}`);
+<<<<<<< HEAD
   if (telegram.hasToken()) {
     telegram.getMe().then((r) => {
       if (r.ok) {
@@ -116,4 +136,6 @@ app.listen(PORT, () => {
       }
     });
   }
+=======
+>>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
 });

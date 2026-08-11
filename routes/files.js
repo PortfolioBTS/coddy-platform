@@ -6,13 +6,17 @@ const coursesDb = require('../db/courses');
 const lessonsDb = require('../db/lessons');
 const homeworksDb = require('../db/homeworks');
 const submissionsDb = require('../db/submissions');
+<<<<<<< HEAD
 const certificatesDb = require('../db/certificates');
 const feedbacksDb = require('../db/feedbacks');
+=======
+>>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
 const { requireAuth } = require('../middleware/auth');
 const { UPLOAD_DIR } = require('../middleware/upload');
 
 const router = express.Router();
 
+<<<<<<< HEAD
 function isParentOfChild(user, childId) {
   return user.role === 'parent' && Array.isArray(user.childIds) && user.childIds.includes(childId);
 }
@@ -25,6 +29,13 @@ function courseAllows(course, user) {
     (user.role === 'teacher' && course.teacherId === user.id) ||
     (user.role === 'student' && course.studentIds.includes(user.id)) ||
     (user.role === 'parent' && Array.isArray(user.childIds) && user.childIds.some((cid) => course.studentIds.includes(cid)))
+=======
+function courseAllows(course, user) {
+  if (!course) return false;
+  return (
+    (user.role === 'teacher' && course.teacherId === user.id) ||
+    (user.role === 'student' && course.studentIds.includes(user.id))
+>>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
   );
 }
 
@@ -58,6 +69,7 @@ router.get('/files/:filename', requireAuth, (req, res) => {
   if (submission) {
     const homework = homeworksDb.getById(submission.homeworkId);
     const allowed =
+<<<<<<< HEAD
       user.role === 'director' ||
       (user.role === 'student' && submission.studentId === user.id) ||
       (user.role === 'teacher' && homework && homework.teacherId === user.id) ||
@@ -86,6 +98,10 @@ router.get('/files/:filename', requireAuth, (req, res) => {
       user.role === 'director' ||
       (user.role === 'teacher' && feedback.teacherId === user.id) ||
       isParentOfChild(user, feedback.studentId);
+=======
+      (user.role === 'student' && submission.studentId === user.id) ||
+      (user.role === 'teacher' && homework && homework.teacherId === user.id);
+>>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
     if (!allowed) return res.status(403).json({ message: 'Доступ запрещён.' });
     return send(res, filename);
   }

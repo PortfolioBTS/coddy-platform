@@ -57,6 +57,7 @@ function initials(user) {
   return `${(user.firstName || '')[0] || ''}${(user.lastName || '')[0] || ''}`.toUpperCase();
 }
 
+<<<<<<< HEAD
 // Склонение существительного по числу: pluralize(3, 'урок', 'урока', 'уроков') → 'урока'
 function pluralize(n, one, few, many) {
   const mod10 = n % 10;
@@ -66,6 +67,8 @@ function pluralize(n, one, few, many) {
   return many;
 }
 
+=======
+>>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
 // Рендерит список ошибок в контейнер (например, <ul class="error-list" id="form-errors">)
 function renderErrors(container, errors) {
   if (!container) return;
@@ -89,6 +92,7 @@ function statusBadge(submission) {
   if (submission.status === 'reviewed') return '<span class="badge badge--ok">проверено</span>';
   return '<span class="badge badge--gold">на проверке</span>';
 }
+<<<<<<< HEAD
 
 // Превращает 'YYYY-MM' в «Август 2026» для вкладок/подписей обратной связи.
 const MONTH_NAMES = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
@@ -144,3 +148,5 @@ function renderFeedbackChart(scores) {
       ${labels}
     </svg>`;
 }
+=======
+>>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3

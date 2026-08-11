@@ -1,8 +1,12 @@
 // public/js/app-shell.js
 
 // Проверяет сессию через /api/me. Если не авторизован — уводит на /login.html.
+<<<<<<< HEAD
 // Если авторизован, но роль не подходит странице — уводит на его собственный раздел
 // (директор имеет полный доступ ко всем разделам).
+=======
+// Если авторизован, но роль не подходит странице — уводит на его собственный раздел.
+>>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
 // При успехе отрисовывает навигацию и возвращает текущего пользователя.
 async function bootPage(requiredRole) {
   let user;
@@ -14,8 +18,13 @@ async function bootPage(requiredRole) {
     return null;
   }
 
+<<<<<<< HEAD
   if (requiredRole && user.role !== requiredRole && user.role !== 'director') {
     window.location.href = homeHrefForRole(user.role);
+=======
+  if (requiredRole && user.role !== requiredRole) {
+    window.location.href = user.role === 'teacher' ? '/teacher/courses.html' : '/student/courses.html';
+>>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
     return null;
   }
 
@@ -23,6 +32,7 @@ async function bootPage(requiredRole) {
   return user;
 }
 
+<<<<<<< HEAD
 function homeHrefForRole(role) {
   if (role === 'student') return '/student/courses.html';
   if (role === 'parent') return '/parent/courses.html';
@@ -36,11 +46,14 @@ function roleLabel(user) {
   return 'Ученик';
 }
 
+=======
+>>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
 function renderNav(user) {
   const el = document.getElementById('app-nav');
   if (!el) return;
 
   const path = window.location.pathname;
+<<<<<<< HEAD
 
   const links = user.role === 'director'
     ? [
@@ -74,21 +87,40 @@ function renderNav(user) {
             ['/student/shop.html', 'Магазин'],
             ['/instructions.html', 'Инструкции'],
           ];
+=======
+  const links = user.role === 'teacher'
+    ? [
+        ['/teacher/courses.html', 'Курсы'],
+        ['/teacher/students.html', 'Ученики'],
+        ['/teacher/shop.html', 'Магазин'],
+        ['/teacher/orders.html', 'Заказы'],
+      ]
+    : [
+        ['/student/courses.html', 'Мои курсы'],
+        ['/student/shop.html', 'Магазин'],
+      ];
+>>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
 
   const linksHtml = links
     .map(([href, label]) => `<a class="app-nav__link ${path === href ? 'is-active' : ''}" href="${href}">${label}</a>`)
     .join('');
 
+<<<<<<< HEAD
   const profileHref = user.role === 'director'
     ? '/director/profile.html'
     : user.role === 'teacher' ? '/teacher/profile.html' : user.role === 'parent' ? '/parent/profile.html' : '/student/profile.html';
   const homeHref = homeHrefForRole(user.role);
+=======
+  const profileHref = user.role === 'teacher' ? '/teacher/profile.html' : '/student/profile.html';
+  const homeHref = user.role === 'teacher' ? '/teacher/courses.html' : '/student/courses.html';
+>>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
 
   el.innerHTML = `
     <div class="app-nav__inner">
       <a class="app-nav__brand" href="${homeHref}">CODDYWORKS<b>.</b></a>
       <div class="app-nav__links">${linksHtml}</div>
       <div class="app-nav__right">
+<<<<<<< HEAD
         <button class="app-nav__burger" type="button" id="nav-burger" aria-label="Открыть меню" aria-expanded="false">☰</button>
         <span class="app-nav__role">${roleLabel(user)}</span>
         <button class="app-nav__bell" type="button" id="notif-bell" aria-label="Уведомления">
@@ -98,6 +130,9 @@ function renderNav(user) {
           </svg>
           <span class="app-nav__bell-badge" id="notif-bell-badge" hidden></span>
         </button>
+=======
+        <span class="app-nav__role">${user.role === 'teacher' ? 'Учитель' : 'Ученик'}</span>
+>>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
         <a class="app-nav__user" href="${profileHref}">${escapeHtml(user.firstName)} ${escapeHtml(user.lastName)}</a>
         <button class="app-nav__logout" type="button" id="logout-btn">Выйти</button>
       </div>
@@ -107,6 +142,7 @@ function renderNav(user) {
     try { await api.postJson('/api/logout'); } catch (e) { /* всё равно уходим на логин */ }
     window.location.href = '/login.html';
   });
+<<<<<<< HEAD
 
   // Мобильное гамбургер-меню: разворачивает/сворачивает ссылки, закрывается
   // по выбору пункта или клику вне меню.
@@ -271,4 +307,6 @@ function dismissCurrentToast() {
   renderPanel();
 
   setTimeout(showNextToast, 300);
+=======
+>>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
 }

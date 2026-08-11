@@ -17,11 +17,14 @@
   const errorsBox = document.getElementById('form-errors');
   let currentLesson = null;
 
+<<<<<<< HEAD
   // Предвыбор теста перед созданием урока (только для нового урока):
   // pendingCopyTest — готовый тест для копирования, pendingCreateNew — открыть форму нового теста.
   let pendingCopyTest = null;
   let pendingCreateNew = false;
 
+=======
+>>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
   if (mode === 'edit') {
     try {
       const data = await api.get(`/api/teacher/lessons/${lessonId}`);
@@ -109,6 +112,7 @@
     }
   }
 
+<<<<<<< HEAD
   // --- Предвыбор теста для нового урока ---
   const testActions = document.getElementById('test-actions');
   const testPlanPanel = document.getElementById('test-plan-panel');
@@ -277,6 +281,8 @@
     });
   }
 
+=======
+>>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     renderErrors(errorsBox, null);
@@ -291,6 +297,7 @@
         window.location.href = `/teacher/lesson.html?id=${encodeURIComponent(lessonId)}`;
       } else {
         const result = await api.postForm(`/api/teacher/courses/${courseId}/lessons`, fd);
+<<<<<<< HEAD
         const newLessonId = result.lesson.id;
         if (pendingCopyTest) {
           await api.postJson(`/api/teacher/lessons/${newLessonId}/test/copy`, { testId: pendingCopyTest.id });
@@ -300,6 +307,9 @@
         } else {
           window.location.href = `/teacher/lesson.html?id=${encodeURIComponent(newLessonId)}`;
         }
+=======
+        window.location.href = `/teacher/lesson.html?id=${encodeURIComponent(result.lesson.id)}`;
+>>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
       }
     } catch (err) {
       renderErrors(errorsBox, err.errors || [err.message]);

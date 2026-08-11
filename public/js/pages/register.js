@@ -3,11 +3,15 @@
 (async function redirectIfLoggedIn() {
   try {
     const { user } = await api.get('/api/me');
+<<<<<<< HEAD
     window.location.href = user.role === 'student'
       ? '/student/courses.html'
       : user.role === 'parent'
         ? '/parent/courses.html'
         : '/teacher/courses.html';
+=======
+    window.location.href = user.role === 'teacher' ? '/teacher/courses.html' : '/student/courses.html';
+>>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
   } catch (e) { /* не авторизован — остаёмся */ }
 })();
 
@@ -16,10 +20,13 @@ const errorsBox = document.getElementById('form-errors');
 
 const birthField = document.getElementById('birth-field');
 const birthInput = document.getElementById('birthDate');
+<<<<<<< HEAD
 const teacherCodeField = document.getElementById('teacher-code-field');
 const parentChildrenField = document.getElementById('parent-children-field');
 const childLoginsList = document.getElementById('child-logins-list');
 const addChildLoginBtn = document.getElementById('add-child-login');
+=======
+>>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
 
 initDatepicker({
   trigger: document.getElementById('datepicker-trigger'),
@@ -29,6 +36,7 @@ initDatepicker({
   maxDate: new Date().toISOString().slice(0, 10),
 });
 
+<<<<<<< HEAD
 function addChildLoginRow() {
   const row = document.createElement('div');
   row.className = 'child-login-row';
@@ -53,6 +61,10 @@ function updateRoleVisibility() {
   teacherCodeField.hidden = !isTeacher;
   parentChildrenField.hidden = !isParent;
 
+=======
+function updateBirthVisibility() {
+  birthField.hidden = form.role.value !== 'student';
+>>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
   if (birthField.hidden) {
     birthInput.value = '';
     const label = document.getElementById('datepicker-label');
@@ -61,8 +73,13 @@ function updateRoleVisibility() {
     label.classList.add('datepicker__placeholder');
   }
 }
+<<<<<<< HEAD
 document.querySelectorAll('input[name="role"]').forEach((r) => r.addEventListener('change', updateRoleVisibility));
 updateRoleVisibility();
+=======
+document.querySelectorAll('input[name="role"]').forEach((r) => r.addEventListener('change', updateBirthVisibility));
+updateBirthVisibility();
+>>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
 
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
@@ -83,6 +100,7 @@ form.addEventListener('submit', async (e) => {
     payload.birthDate = birthInput.value;
   }
 
+<<<<<<< HEAD
   if (form.role.value === 'teacher') {
     payload.teacherCode = document.getElementById('teacherCode').value.trim();
   }
@@ -97,6 +115,8 @@ form.addEventListener('submit', async (e) => {
     }
   }
 
+=======
+>>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
   if (payload.password !== payload.passwordConfirm) {
     renderErrors(errorsBox, ['Пароли не совпадают.']);
     return;
@@ -111,11 +131,15 @@ form.addEventListener('submit', async (e) => {
 
   try {
     const { user } = await api.postJson('/api/register', payload);
+<<<<<<< HEAD
     window.location.href = user.role === 'teacher'
       ? '/teacher/courses.html'
       : user.role === 'parent'
         ? '/parent/courses.html'
         : '/student/courses.html';
+=======
+    window.location.href = user.role === 'teacher' ? '/teacher/courses.html' : '/student/courses.html';
+>>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
   } catch (err) {
     renderErrors(errorsBox, err.errors || [err.message]);
   }

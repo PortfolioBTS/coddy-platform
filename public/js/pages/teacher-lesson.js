@@ -25,7 +25,11 @@
   }
 
   function render() {
+<<<<<<< HEAD
     const { lesson, submissionRows, test, testStats } = state;
+=======
+    const { lesson, submissionRows } = state;
+>>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
 
     let mediaHtml;
     if (lesson.video) {
@@ -48,6 +52,7 @@
         </div>`
       : '';
 
+<<<<<<< HEAD
     // Если в уроке есть только тест (нет текста, видео, файлов, описания;
     // обложка — это не материал), сдавать нечего — таблицу «Статус сдачи» не показываем.
     const hasLessonMaterial = !!(
@@ -58,6 +63,8 @@
     );
     const onlyTest = !!test && !hasLessonMaterial;
 
+=======
+>>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
     content.innerHTML = `
       <div class="page-head">
         <div>
@@ -90,6 +97,7 @@
 
       <hr style="border:none; border-top:2px solid var(--ink); margin:36px 0;">
 
+<<<<<<< HEAD
       ${onlyTest ? '' : `
         <p class="section-title">Домашнее задание</p>
 
@@ -100,6 +108,11 @@
 
       <p class="section-title">Тест</p>
       ${testSectionHtml(test, testStats)}
+=======
+      <p class="section-title">Домашнее задание</p>
+
+      ${homeworkSectionHtml(submissionRows)}
+>>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
     `;
 
     document.getElementById('delete-modal-meta').textContent =
@@ -107,6 +120,7 @@
 
     initModals();
     setupDelete();
+<<<<<<< HEAD
     setupTestDelete();
     setupCopyTest();
   }
@@ -192,6 +206,8 @@
     if (m10 === 1 && m100 !== 11) return one;
     if (m10 >= 2 && m10 <= 4 && (m100 < 10 || m100 >= 20)) return few;
     return many;
+=======
+>>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
   }
 
   function homeworkSectionHtml(rows) {
@@ -228,6 +244,7 @@
       window.location.href = `/teacher/course.html?id=${encodeURIComponent(state.lesson.courseId)}`;
     });
   }
+<<<<<<< HEAD
 
   function setupTestDelete() {
     const form = document.getElementById('test-delete-form');
@@ -426,4 +443,6 @@
     copyBtn(intoBtn, () => { openInto(); open(); });
     copyBtn(outBtn, () => { openOut(); open(); });
   }
+=======
+>>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
 })();
