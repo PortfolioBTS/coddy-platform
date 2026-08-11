@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="page-title">Урок · Классный журнал</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <nav class="app-nav" id="app-nav"></nav>
+
+  <div class="wrap">
+    <a class="back-link" id="back-link" href="/student/courses.html">← Курс</a>
+    <div id="content"><p class="muted">Загрузка…</p></div>
+  </div>
+
+  <div class="modal-overlay" id="answer-modal" hidden>
+    <div class="modal" role="dialog" aria-modal="true">
+      <span class="modal__ribbon">✎</span>
+      <button class="modal__close" type="button" data-modal-close aria-label="Закрыть">✕</button>
+      <h2 class="modal__title">Ответ на задание</h2>
+      <form class="form" id="answer-form">
+        <ul class="error-list" id="answer-errors" hidden></ul>
+        <div class="field">
+          <label class="field__label" for="answer-comment">Напиши ответ текстом</label>
+          <textarea class="textarea" id="answer-comment" name="comment" rows="6"></textarea>
+        </div>
+        <div class="field">
+          <span class="field__label">Прикрепите файл, если необходимо</span>
+          <div class="file-field">
+            <input type="file" id="answer-files" name="files" multiple accept=".pdf,.doc,.docx,.ppt,.pptx,.txt,.jpg,.jpeg,.png,.html,.css,.js,.mp4,.py,.jsx,.ts,.tsx,.json,.yaml,.yml,.xml,.sh,.sql,.md,.csv,.svg,.zip,.rar">
+            <span class="field__hint">До 5 файлов, каждый до 50 МБ. Можно прикрепить архив .zip или .rar.</span>
+          </div>
+        </div>
+        <div class="form-actions">
+          <button class="btn btn--red" type="submit" id="answer-submit-btn">Отправить на проверку</button>
+          <button class="btn btn--ghost" type="button" data-modal-close>Отмена</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  <div class="modal-overlay" id="test-modal" hidden>
+    <div class="modal" role="dialog" aria-modal="true">
+      <span class="modal__ribbon">✓</span>
+      <button class="modal__close" type="button" data-modal-close aria-label="Закрыть">✕</button>
+      <h2 class="modal__title" id="test-modal-title">Тест</h2>
+      <p class="modal__meta" id="test-modal-meta"></p>
+      <div class="modal__scroll">
+        <form class="form" id="test-form">
+          <div id="test-questions"></div>
+          <div class="form-actions">
+            <button class="btn btn--red" type="submit" id="test-submit-btn">Отправить тест</button>
+            <button class="btn btn--ghost" type="button" data-modal-close>Отмена</button>
+          </div>
+          <ul class="error-list" id="test-errors" hidden></ul>
+        </form>
+        <div id="test-result" hidden></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/utils.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/app-shell.js"></script>
+  <script src="/js/ui.js"></script>
+  <script src="/js/pages/student-lesson.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+[
+  {
+    "id": "TZIXbqRo90us",
+    "createdAt": "2026-08-02T20:15:19.681Z",
+    "userId": "eASM0yGawH0o",
+    "readIds": [
+      "VgAMgqwLCqCr",
+      "XyVmPqEuCI09"
+    ],
+    "removedIds": [],
+    "updatedAt": "2026-08-05T10:55:38.127Z"
+  },
+  {
+    "id": "TNvXLSIRNm25",
+    "createdAt": "2026-08-02T20:15:27.396Z",
+    "userId": "xTuDZzgwah4K",
+    "readIds": [
+      "VgAMgqwLCqCr",
+      "XyVmPqEuCI09"
+    ],
+    "removedIds": [
+      "VgAMgqwLCqCr"
+    ],
+    "updatedAt": "2026-08-05T10:58:03.414Z"
+  },
+  {
+    "id": "1nDnrAH77qx5",
+    "createdAt": "2026-08-02T20:15:43.456Z",
+    "userId": "dir-danila",
+    "readIds": [
+      "VgAMgqwLCqCr",
+      "XyVmPqEuCI09",
+      "izm14M4VsSVW"
+    ],
+    "removedIds": [],
+    "updatedAt": "2026-08-11T07:36:11.055Z"
+  },
+  {
+    "id": "wvseRqjfuzR6",
+    "createdAt": "2026-08-02T20:30:25.907Z",
+    "userId": "EMu5FlQC2A4A",
+    "readIds": [
+      "VgAMgqwLCqCr"
+    ],
+    "removedIds": []
+  },
+  {
+    "id": "Pd6INPS6SdZN",
+    "createdAt": "2026-08-02T20:35:55.560Z",
+    "userId": "OxTP6vcAUEj2",
+    "readIds": [
+      "VgAMgqwLCqCr"
+    ],
+    "removedIds": []
+  },
+  {
+    "id": "kpV9ZoV7KDEe",
+    "createdAt": "2026-08-05T06:01:14.055Z",
+    "userId": "UhuXyMtwr32Y",
+    "readIds": [
+      "VgAMgqwLCqCr"
+    ],
+    "removedIds": []
+  },
+  {
+    "id": "YXLN6jTjtRCO",
+    "createdAt": "2026-08-05T06:01:45.128Z",
+    "userId": "EZRVsXc5VLO-",
+    "readIds": [
+      "VgAMgqwLCqCr"
+    ],
+    "removedIds": []
+  },
+  {
+    "id": "SR4KQ-OuFNtm",
+    "createdAt": "2026-08-11T07:39:30.067Z",
+    "userId": "AtqwzU-1cpK1",
+    "readIds": [
+      "izm14M4VsSVW",
+      "XyVmPqEuCI09",
+      "VgAMgqwLCqCr"
+    ],
+    "removedIds": [],
+    "updatedAt": "2026-08-11T07:39:35.672Z"
+  },
+  {
+    "id": "z70lc-5J1qY6",
+    "createdAt": "2026-08-11T07:44:48.770Z",
+    "userId": "82SogPhRI_4P",
+    "readIds": [
+      "izm14M4VsSVW",
+      "XyVmPqEuCI09",
+      "VgAMgqwLCqCr"
+    ],
+    "removedIds": [],
+    "updatedAt": "2026-08-11T07:44:51.513Z"
+  }
+]

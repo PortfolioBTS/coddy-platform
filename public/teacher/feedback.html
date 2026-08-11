@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Обратная связь · Классный журнал</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <nav class="app-nav" id="app-nav"></nav>
+
+  <div class="wrap">
+    <div id="content"><p class="muted">Загрузка…</p></div>
+  </div>
+
+  <!-- Модалка заполнения обратной связи по ребёнку -->
+  <div class="modal-overlay" id="feedback-modal" hidden>
+    <div class="modal modal--wide" role="dialog" aria-modal="true">
+      <span class="modal__ribbon">💬</span>
+      <button class="modal__close" type="button" data-modal-close aria-label="Закрыть">✕</button>
+      <h2 class="modal__title" id="feedback-modal-title">Обратная связь</h2>
+      <p class="modal__meta">Заполняется отдельно на каждый месяц — историю можно посмотреть и отредактировать в любой момент</p>
+
+      <div class="modal__scroll">
+        <ul class="error-list" id="feedback-errors" hidden></ul>
+
+        <div class="field">
+          <label class="field__label" for="feedback-month">Месяц</label>
+          <input class="input" type="month" id="feedback-month" style="max-width:220px;">
+        </div>
+        <div id="feedback-history" style="margin:10px 0 18px;"></div>
+
+        <form class="form" id="feedback-form">
+          <div class="feedback-layout">
+            <div class="feedback-block feedback-block--chart">
+              <p class="feedback-block__title">График</p>
+              <div class="field">
+                <label class="field__label" for="feedback-hw">% выполненных дз — <span id="feedback-hw-val">0</span>%</label>
+                <input class="range" type="range" id="feedback-hw" min="0" max="100" step="5" value="0">
+              </div>
+              <div class="field">
+                <label class="field__label" for="feedback-comm">Коммуникация в группе — <span id="feedback-comm-val">0</span>%</label>
+                <input class="range" type="range" id="feedback-comm" min="0" max="100" step="5" value="0">
+              </div>
+              <div class="field">
+                <label class="field__label" for="feedback-progress">Успеваемость на уроке — <span id="feedback-progress-val">0</span>%</label>
+                <input class="range" type="range" id="feedback-progress" min="0" max="100" step="5" value="0">
+              </div>
+              <div id="feedback-chart-preview"></div>
+            </div>
+
+            <div class="feedback-block feedback-block--text">
+              <p class="feedback-block__title">Текст от преподавателя</p>
+              <div class="field">
+                <textarea class="textarea" id="feedback-text" rows="9" placeholder="Как прошёл месяц, что получается хорошо, на что обратить внимание…"></textarea>
+              </div>
+            </div>
+
+            <div class="feedback-block feedback-block--notes">
+              <p class="feedback-block__title">Основные моменты по работе с ребёнком</p>
+              <div class="feedback-quick-notes" id="feedback-quick-notes">
+                <button type="button" class="btn btn--sm" data-note="Отвлекается на уроке">+ Отвлекается</button>
+                <button type="button" class="btn btn--sm" data-note="Редко отвечает на вопросы">+ Редко отвечает</button>
+                <button type="button" class="btn btn--sm" data-note="Отвлекается на телефон">+ Отвлекается на телефон</button>
+                <button type="button" class="btn btn--sm" data-note="Стесняется отвечать при группе">+ Стесняется</button>
+                <button type="button" class="btn btn--sm" data-note="Активно участвует в уроке">+ Активно участвует</button>
+              </div>
+              <div class="field">
+                <textarea class="textarea" id="feedback-notes" rows="6" placeholder="По пункту в строке — например: отвлекается на телефон"></textarea>
+                <span class="field__hint">Каждая строка станет отдельным пунктом списка</span>
+              </div>
+            </div>
+
+            <div class="feedback-block feedback-block--project">
+              <p class="feedback-block__title">Проект ребёнка</p>
+              <div class="feedback-gallery" id="feedback-existing-files"></div>
+              <div class="field" style="margin-top:10px;">
+                <div class="file-field">
+                  <input type="file" id="feedback-project-files" multiple accept=".jpg,.jpeg,.png,.gif,.webp,.pdf,.doc,.docx,.ppt,.pptx,.zip,.rar">
+                  <span class="field__hint">До 6 файлов за один раз — фото, скриншоты или файлы проекта</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-actions" style="margin-top:20px;">
+            <button class="btn btn--red" type="submit">Сохранить отзыв</button>
+            <button class="btn btn--danger" type="button" id="feedback-delete-btn" hidden>Удалить за этот месяц</button>
+            <span class="field__hint" id="feedback-save-status"></span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/utils.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/app-shell.js"></script>
+  <script src="/js/ui.js"></script>
+  <script src="/js/pages/teacher-feedback.js"></script>
+</body>
+</html>

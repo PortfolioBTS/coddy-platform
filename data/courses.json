@@ -1,0 +1,131 @@
+[
+  {
+    "id": "Bw1YVId54Sv2",
+    "createdAt": "2026-07-27T09:31:10.467Z",
+    "title": "Питон",
+    "description": "Созданние ат ботов",
+    "academicYear": "2026-2027",
+    "coverImage": "1785144670464-55ee6ebd8821e0cf7f049488.jpg",
+    "teacherId": "d5WpTOVowybP",
+    "studentIds": []
+  },
+  {
+    "id": "W-TRcDQQ45qj",
+    "createdAt": "2026-07-27T10:06:23.914Z",
+    "title": "Питон",
+    "description": "Разработка чат-ботов",
+    "academicYear": "2026-2027",
+    "coverImage": "1785146783912-c07bf36758d7e136a158e80e.jpg",
+    "teacherId": "xTuDZzgwah4K",
+    "studentIds": [
+      "eASM0yGawH0o",
+      "EZRVsXc5VLO-",
+      "UhuXyMtwr32Y",
+      "YN0HOjzeDcOF",
+      "3ktF0UZCk3cs",
+      "QI0y741dYBWR"
+    ],
+    "updatedAt": "2026-07-31T14:08:02.741Z"
+  },
+  {
+    "id": "WdOi3OXsyzQH",
+    "createdAt": "2026-08-02T13:35:28.588Z",
+    "title": "К",
+    "description": "",
+    "academicYear": "",
+    "coverImage": null,
+    "teacherId": "jSb8uClh8Qcv",
+    "studentIds": [
+      "d0fMEvSxruZz"
+    ]
+  },
+  {
+    "id": "ChVj0XcBfP8s",
+    "createdAt": "2026-08-02T13:36:50.581Z",
+    "title": "К",
+    "description": "",
+    "academicYear": "",
+    "coverImage": null,
+    "teacherId": "CWq7so0OaxXk",
+    "studentIds": [
+      "t5A5WW15jIer"
+    ]
+  },
+  {
+    "id": "GqlKSItDaqnG",
+    "createdAt": "2026-08-02T13:39:06.775Z",
+    "title": "К",
+    "description": "",
+    "academicYear": "",
+    "coverImage": null,
+    "teacherId": "ZcH8J3gTSJId",
+    "studentIds": [
+      "wdvwFoBAyppN"
+    ]
+  },
+  {
+    "id": "m4AmGYbZcx6a",
+    "createdAt": "2026-08-02T13:40:02.590Z",
+    "title": "К",
+    "description": "",
+    "academicYear": "",
+    "coverImage": null,
+    "teacherId": "VcRC4YK_GafF",
+    "studentIds": [
+      "StDRMxBxbCni"
+    ]
+  },
+  {
+    "id": "mV0g_zOdyAjB",
+    "createdAt": "2026-08-02T13:50:07.227Z",
+    "title": "К",
+    "description": "",
+    "academicYear": "",
+    "coverImage": null,
+    "teacherId": "TnWJacSWd_yA",
+    "studentIds": [
+      "1pXT9JO6cR0K"
+    ]
+  },
+  {
+    "id": "siLiOsjk8nK8",
+    "createdAt": "2026-08-03T10:33:32.804Z",
+    "title": "1",
+    "description": "",
+    "academicYear": "",
+    "coverImage": null,
+    "teacherId": "xTuDZzgwah4K",
+    "studentIds": []
+  },
+  {
+    "id": "Ei7Thg1b89ER",
+    "createdAt": "2026-08-05T10:43:16.311Z",
+    "title": "фцавцфв",
+    "description": "афцаф",
+    "academicYear": "123123",
+    "coverImage": null,
+    "teacherId": "xTuDZzgwah4K",
+    "studentIds": [
+      "cHmbQPQAP2Or",
+      "Ua9SVrtqCtME",
+      "XIefMCJcH42V",
+      "_EprJKDl_qbE"
+    ],
+    "updatedAt": "2026-08-05T10:43:29.610Z"
+  },
+  {
+    "id": "Yq5kI2bB4CUh",
+    "createdAt": "2026-08-11T07:43:11.891Z",
+    "title": "Beckend на Rust",
+    "description": "Научимся присать хоррпоший бек на Rust",
+    "academicYear": "2026-2027",
+    "coverImage": "1786434191890-744d95b12a00139962b8880b.png",
+    "teacherId": "82SogPhRI_4P",
+    "studentIds": [
+      "hjiupFjRueP_",
+      "_EprJKDl_qbE",
+      "hYl8OL08vXIe",
+      "qizjNXw-ksYI"
+    ]
+  }
+]

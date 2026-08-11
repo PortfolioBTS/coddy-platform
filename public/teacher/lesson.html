@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="page-title">Урок · Классный журнал</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <nav class="app-nav" id="app-nav"></nav>
+
+  <div class="wrap">
+    <a class="back-link" id="back-link" href="/teacher/courses.html">← Курс</a>
+    <div id="content"><p class="muted">Загрузка…</p></div>
+  </div>
+
+  <div class="modal-overlay" id="delete-modal" hidden>
+    <div class="modal" role="dialog" aria-modal="true">
+      <span class="modal__ribbon">×</span>
+      <button class="modal__close" type="button" data-modal-close aria-label="Закрыть">✕</button>
+      <h2 class="modal__title">Удалить урок?</h2>
+      <p class="modal__meta" id="delete-modal-meta">Это действие необратимо.</p>
+      <form class="form" id="delete-form">
+        <ul class="error-list" data-role="delete-errors" hidden></ul>
+        <div class="field">
+          <label class="field__label" for="confirmText">Чтобы подтвердить, введите слово «УДАЛИТЬ»</label>
+          <input class="input" type="text" id="confirmText" name="confirmText" autocomplete="off" placeholder="УДАЛИТЬ">
+        </div>
+        <div class="form-actions">
+          <button class="btn btn--danger" type="submit">Удалить урок безвозвратно</button>
+          <button class="btn btn--ghost" type="button" data-modal-close>Отмена</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  <div class="modal-overlay" id="test-delete-modal" hidden>
+    <div class="modal" role="dialog" aria-modal="true">
+      <span class="modal__ribbon">×</span>
+      <button class="modal__close" type="button" data-modal-close aria-label="Закрыть">✕</button>
+      <h2 class="modal__title">Удалить тест?</h2>
+      <p class="modal__meta">Все результаты учеников по этому тесту будут удалены безвозвратно.</p>
+      <form class="form" id="test-delete-form">
+        <ul class="error-list" data-role="test-delete-errors" hidden></ul>
+        <div class="field">
+          <label class="field__label" for="testConfirmText">Чтобы подтвердить, введите слово «УДАЛИТЬ»</label>
+          <input class="input" type="text" id="testConfirmText" name="confirmText" autocomplete="off" placeholder="УДАЛИТЬ">
+        </div>
+        <div class="form-actions">
+          <button class="btn btn--danger" type="submit">Удалить тест</button>
+          <button class="btn btn--ghost" type="button" data-modal-close>Отмена</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Модалка копирования теста (на другой урок / с другого урока) -->
+  <div class="modal-overlay" id="copy-test-modal" hidden>
+    <div class="modal" role="dialog" aria-modal="true">
+      <span class="modal__ribbon">📝</span>
+      <button class="modal__close" type="button" data-modal-close aria-label="Закрыть">✕</button>
+      <h2 class="modal__title" id="copy-test-title">Копировать тест</h2>
+      <p class="modal__meta" id="copy-test-meta"></p>
+      <div style="margin: 0 4px 14px 24px;">
+        <input class="input" type="text" id="copy-test-search" placeholder="Поиск…">
+      </div>
+      <ul class="error-list" id="copy-test-errors" hidden></ul>
+      <div class="modal__scroll" id="copy-test-list">
+        <span class="checkbox-grid__empty">Загрузка…</span>
+      </div>
+      <div class="form-actions" style="padding: 12px 4px 4px;">
+        <button class="btn btn--ghost" type="button" id="copy-test-back" hidden>← Назад</button>
+        <button class="btn btn--ghost" type="button" data-modal-close>Отмена</button>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="/js/utils.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/app-shell.js"></script>
+  <script src="/js/ui.js"></script>
+  <script src="/js/pages/teacher-lesson.js"></script>
+</body>
+</html>

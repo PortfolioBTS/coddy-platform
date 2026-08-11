@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Педагоги · Классный журнал</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <nav class="app-nav" id="app-nav"></nav>
+
+  <div class="wrap wrap--wide">
+    <div class="page-head">
+      <div>
+        <p class="page-head__eyebrow">Раздел · Педагоги</p>
+        <h1 class="page-head__title">Педагоги</h1>
+        <p class="page-head__desc">Все педагоги платформы. Выдайте педагогу код для регистрации или удалите его при необходимости.</p>
+      </div>
+    </div>
+
+    <div class="teacher-code-panel">
+      <div class="teacher-code-panel__body">
+        <label class="field__label" for="teacher-code-input">Код педагога для регистрации</label>
+        <div class="teacher-code-panel__row">
+          <input class="input teacher-code-panel__input" type="text" id="teacher-code-input" placeholder="Например: coddy2024" maxlength="40" autocomplete="off">
+          <button class="btn btn--red" type="button" id="teacher-code-save">Сохранить</button>
+          <span class="teacher-code-panel__status" id="teacher-code-status"></span>
+        </div>
+        <p class="teacher-code-panel__hint">Этот код директор вводит один раз. Любой человек, зная его, сможет зарегистрироваться как педагог.</p>
+      </div>
+    </div>
+
+    <div class="controls">
+      <div class="controls__row">
+        <input class="controls__search" type="text" id="search-input" placeholder="Поиск по имени, фамилии, телефону или почте…">
+      </div>
+      <span class="controls__label" id="teachers-count"></span>
+    </div>
+    <div id="content"><p class="muted">Загрузка…</p></div>
+  </div>
+
+  <script src="/js/utils.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/app-shell.js"></script>
+  <script src="/js/ui.js"></script>
+  <script src="/js/pages/director-teachers.js"></script>
+</body>
+</html>

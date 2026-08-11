@@ -1,0 +1,23 @@
+[
+  {
+    "id": "ya9sHaVhIzW-",
+    "createdAt": "2026-08-11T07:45:26.538Z",
+    "courseId": "Yq5kI2bB4CUh",
+    "studentId": "qizjNXw-ksYI",
+    "teacherId": "82SogPhRI_4P",
+    "month": "2026-08",
+    "homeworkPercent": 70,
+    "communicationScore": 60,
+    "progressScore": 70,
+    "teacherText": "г57уернвпрепввп",
+    "focusNotes": "Отвлекается на уроке\r\nРедко отвечает на вопросы\r\nОтвлекается на телефон",
+    "projectFiles": [
+      {
+        "filename": "1786434326537-da6fd5ee835231b8b76faf14.png",
+        "originalName": "image.png",
+        "size": 152548
+      }
+    ],
+    "updatedAt": "2026-08-11T07:45:30.818Z"
+  }
+]

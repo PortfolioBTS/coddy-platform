@@ -1,0 +1,501 @@
+[
+  {
+    "id": 1,
+    "categoryId": 4,
+    "categoryName": "Кружки",
+    "type": "physical",
+    "name": "Кружка CODDY",
+    "price": 65,
+    "image": "https://static.coddyshop.ru/cache/products/42/thumb_191.jpg",
+    "description": "Стильная кружка с логотипом CODDY. Отличный подарок для ученика или преподавателя."
+  },
+  {
+    "id": 2,
+    "categoryId": 13,
+    "categoryName": "Одежда",
+    "type": "physical",
+    "name": "Футболка CODDY",
+    "price": 150,
+    "image": "https://static.coddyshop.ru/cache/products/156/thumb_217.jpg",
+    "description": "Футболка CODDY. При заказе указывайте размер. Доступные размеры 42,46,48,50,52,54. Количество товара ограничено, наличие на филиале уточняйте у администратора или преподавателя.",
+    "requiresSize": true,
+    "availableSizes": [
+      "42",
+      "46",
+      "48",
+      "50",
+      "52",
+      "54"
+    ]
+  },
+  {
+    "id": 3,
+    "categoryId": 6,
+    "categoryName": "Головоломки",
+    "type": "physical",
+    "name": "Головоломка металлическая",
+    "price": 25,
+    "image": "https://static.coddyshop.ru/cache/products/109/thumb_139.jpg",
+    "description": "Металлическая головоломка, которая развивает логику и мелкую моторику. Непростая задача для пытливого ума."
+  },
+  {
+    "id": 4,
+    "categoryId": 7,
+    "categoryName": "Флешки",
+    "type": "physical",
+    "name": "USB-флешка 64Гб (джойстик)",
+    "price": 120,
+    "image": "https://static.coddyshop.ru/cache/products/141/thumb_194.jpg",
+    "description": "USB-флешка 64Гб в форме джойстика"
+  },
+  {
+    "id": 5,
+    "categoryId": 7,
+    "categoryName": "Флешки",
+    "type": "physical",
+    "name": "USB-флешка 64Гб (кошачья лапка)",
+    "price": 120,
+    "image": "https://static.coddyshop.ru/cache/products/140/thumb_192.jpg",
+    "description": "USB-флешка на 64Гб в форме кошачьей лапки"
+  },
+  {
+    "id": 6,
+    "categoryId": 7,
+    "categoryName": "Флешки",
+    "type": "physical",
+    "name": "USB Флеш-накопитель 32ГБ",
+    "price": 80,
+    "image": "https://static.coddyshop.ru/cache/products/105/thumb_135.png",
+    "description": "USB-флешка 32 ГБ в компактном корпусе с логотипом CODDY."
+  },
+  {
+    "id": 7,
+    "categoryId": 7,
+    "categoryName": "Флешки",
+    "type": "physical",
+    "name": "USB Флеш-накопитель 16ГБ",
+    "price": 80,
+    "image": "https://static.coddyshop.ru/cache/products/103/thumb_133.jpg",
+    "description": "Надёжный USB-накопитель на 16 ГБ для хранения проектов и домашних заданий."
+  },
+  {
+    "id": 8,
+    "categoryId": 8,
+    "categoryName": "Настольные игры",
+    "type": "physical",
+    "name": "Игра настольная CODDY Крокодил",
+    "price": 100,
+    "image": "https://static.coddyshop.ru/cache/products/129/thumb_172.jpg",
+    "description": "Весёлая командная игра «Крокодил» от CODDY. Объясняйте слова жестами и угадывайте быстрее всех!"
+  },
+  {
+    "id": 9,
+    "categoryId": 8,
+    "categoryName": "Настольные игры",
+    "type": "physical",
+    "name": "Игра настольная Котэм сити",
+    "price": 125,
+    "image": "https://static.coddyshop.ru/cache/products/122/thumb_160.jpg",
+    "description": "Стратегическая настольная игра о котах, захватывающих город. Стройте, торгуйте и мяукайте!"
+  },
+  {
+    "id": 10,
+    "categoryId": 8,
+    "categoryName": "Настольные игры",
+    "type": "physical",
+    "name": "Hobby World Настольная игра Юный Свинтус",
+    "price": 55,
+    "image": "https://static.coddyshop.ru/cache/products/116/thumb_149.jpg",
+    "description": "Забавная карточная игра для самых маленьких от Hobby World. Простые правила и море смеха."
+  },
+  {
+    "id": 11,
+    "categoryId": 8,
+    "categoryName": "Настольные игры",
+    "type": "physical",
+    "name": "Настольная игра Hobby World Взрывные котята",
+    "price": 60,
+    "image": "https://static.coddyshop.ru/cache/products/115/thumb_148.jpg",
+    "description": "Русская версия культовой карточной игры «Exploding Kittens». Не взорвись!"
+  },
+  {
+    "id": 12,
+    "categoryId": 8,
+    "categoryName": "Настольные игры",
+    "type": "physical",
+    "name": "Настольная игра Hobby World Свинтус Злоключения",
+    "price": 110,
+    "image": "https://static.coddyshop.ru/cache/products/114/thumb_147.jpg",
+    "description": "Продолжение приключений Свинтуса — ещё больше весёлых карт и неожиданных поворотов."
+  },
+  {
+    "id": 13,
+    "categoryId": 9,
+    "categoryName": "Ачивки",
+    "type": "physical",
+    "name": "Коврик для мышки",
+    "price": 50,
+    "image": "https://static.coddyshop.ru/cache/products/76/thumb_92.jpeg",
+    "description": "Игровой коврик для мыши с логотипом CODDY. Скольжение — огонь!"
+  },
+  {
+    "id": 14,
+    "categoryId": 9,
+    "categoryName": "Ачивки",
+    "type": "physical",
+    "name": "Браслет CODDY",
+    "price": 15,
+    "image": "https://static.coddyshop.ru/cache/products/34/thumb_35.png",
+    "description": "Цвет: черный, синий, фиолетовый"
+  },
+  {
+    "id": 15,
+    "categoryId": 10,
+    "categoryName": "Пицца",
+    "type": "physical",
+    "name": "Пицца с доставкой",
+    "price": 100,
+    "image": "https://static.coddyshop.ru/cache/products/54/thumb_67.jpg",
+    "description": "Пицца пепперони 30 см с доставкой"
+  },
+  {
+    "id": 16,
+    "categoryId": 14,
+    "categoryName": "Электроника",
+    "type": "physical",
+    "name": "Коврик для мыши большой 900х400",
+    "price": 110,
+    "image": "https://static.coddyshop.ru/cache/products/155/thumb_216.jpg",
+    "description": "Большой коврик для мыши 900×400 мм. Максимум пространства для низкой чувствительности."
+  },
+  {
+    "id": 17,
+    "categoryId": 14,
+    "categoryName": "Электроника",
+    "type": "physical",
+    "name": "Коврик для мыши большой 900х400",
+    "price": 110,
+    "image": "https://static.coddyshop.ru/cache/products/154/thumb_215.jpg",
+    "description": "Большой коврик для мыши 900×400 мм. Максимум пространства для низкой чувствительности."
+  },
+  {
+    "id": 18,
+    "categoryId": 14,
+    "categoryName": "Электроника",
+    "type": "physical",
+    "name": "Игровая компьютерная мышь A4Tech",
+    "price": 200,
+    "image": "https://static.coddyshop.ru/cache/products/121/thumb_159.jpg",
+    "description": "8 кнопок / 3200 dpi / Bloody V8"
+  },
+  {
+    "id": 19,
+    "categoryId": 14,
+    "categoryName": "Электроника",
+    "type": "physical",
+    "name": "Коврик для мыши Cactus Black",
+    "price": 50,
+    "image": "https://static.coddyshop.ru/cache/products/119/thumb_152.jpg",
+    "description": "Компактный коврик Cactus Black с гладкой поверхностью для точных движений."
+  },
+  {
+    "id": 20,
+    "categoryId": 14,
+    "categoryName": "Электроника",
+    "type": "physical",
+    "name": "Игровая клавиатура",
+    "price": 90,
+    "image": "https://static.coddyshop.ru/cache/products/118/thumb_151.jpg",
+    "description": "Игровая клавиатура проводная Defender Spark с подсветкой RGB, черный"
+  },
+  {
+    "id": 21,
+    "categoryId": 14,
+    "categoryName": "Электроника",
+    "type": "physical",
+    "name": "Портативная колонка JBL Go 3",
+    "price": 360,
+    "image": "https://static.coddyshop.ru/cache/products/81/thumb_104.jpg",
+    "description": "Компактная портативная колонка JBL Go 3 с насыщенным звуком и водозащитой."
+  },
+  {
+    "id": 22,
+    "categoryId": 3,
+    "categoryName": "Компьютерные игры в Steam",
+    "type": "steam",
+    "name": "Aseprite",
+    "price": 60,
+    "image": "https://static.coddyshop.ru/cache/products/168/thumb_229.jpg",
+    "description": "Профессиональный редактор для пиксельной графики и анимации. Незаменим для создания спрайтов."
+  },
+  {
+    "id": 23,
+    "categoryId": 3,
+    "categoryName": "Компьютерные игры в Steam",
+    "type": "steam",
+    "name": "MIMESIS",
+    "price": 60,
+    "image": "https://static.coddyshop.ru/cache/products/167/thumb_228.jpg",
+    "description": "Кооперативный хоррор на выживание."
+  },
+  {
+    "id": 24,
+    "categoryId": 3,
+    "categoryName": "Компьютерные игры в Steam",
+    "type": "steam",
+    "name": "YAPYAP",
+    "price": 60,
+    "image": "https://static.coddyshop.ru/cache/products/166/thumb_227.jpg",
+    "description": "Кооперативный магический хоррор для 6 игроков."
+  },
+  {
+    "id": 25,
+    "categoryId": 3,
+    "categoryName": "Компьютерные игры в Steam",
+    "type": "steam",
+    "name": "The King is Watching",
+    "price": 60,
+    "image": "https://static.coddyshop.ru/cache/products/165/thumb_226.jpg",
+    "description": "Роглайт-стратегия, в которой вы строите свое королевство."
+  },
+  {
+    "id": 26,
+    "categoryId": 3,
+    "categoryName": "Компьютерные игры в Steam",
+    "type": "steam",
+    "name": "Palworld",
+    "price": 130,
+    "image": "https://static.coddyshop.ru/cache/products/164/thumb_225.jpg",
+    "description": "Симулятор выживания в открытом мире с существами Палами."
+  },
+  {
+    "id": 27,
+    "categoryId": 3,
+    "categoryName": "Компьютерные игры в Steam",
+    "type": "steam",
+    "name": "Soundpad",
+    "price": 40,
+    "image": "https://static.coddyshop.ru/cache/products/163/thumb_224.jpg",
+    "description": "Качественное воспроизведение звуков в голосовых чатах."
+  },
+  {
+    "id": 28,
+    "categoryId": 3,
+    "categoryName": "Компьютерные игры в Steam",
+    "type": "steam",
+    "name": "Factorio",
+    "price": 130,
+    "image": "https://static.coddyshop.ru/cache/products/162/thumb_223.jpg",
+    "description": "Игра о создании автоматизированных фабрик."
+  },
+  {
+    "id": 29,
+    "categoryId": 3,
+    "categoryName": "Компьютерные игры в Steam",
+    "type": "steam",
+    "name": "Cuphead",
+    "price": 60,
+    "image": "https://static.coddyshop.ru/cache/products/161/thumb_222.jpg",
+    "description": "Классический платформер в духе 1930-х."
+  },
+  {
+    "id": 30,
+    "categoryId": 3,
+    "categoryName": "Компьютерные игры в Steam",
+    "type": "steam",
+    "name": "PEAK",
+    "price": 60,
+    "image": "https://static.coddyshop.ru/cache/products/160/thumb_221.jpg",
+    "description": "Совместная игра о восхождении."
+  },
+  {
+    "id": 31,
+    "categoryId": 3,
+    "categoryName": "Компьютерные игры в Steam",
+    "type": "steam",
+    "name": "Hollow Knight: Silksong",
+    "price": 100,
+    "image": "https://static.coddyshop.ru/cache/products/159/thumb_220.jpg",
+    "description": "Долгожданное продолжение Hollow Knight. Исследуйте королевство, сражайтесь с врагами, раскрывайте тайны."
+  },
+  {
+    "id": 32,
+    "categoryId": 3,
+    "categoryName": "Компьютерные игры в Steam",
+    "type": "steam",
+    "name": "Megabonk",
+    "price": 60,
+    "image": "https://static.coddyshop.ru/cache/products/158/thumb_219.jpg",
+    "description": "Разноси бесконечные волны врагов."
+  },
+  {
+    "id": 33,
+    "categoryId": 3,
+    "categoryName": "Компьютерные игры в Steam",
+    "type": "steam",
+    "name": "Assetto Corsa",
+    "price": 200,
+    "image": "https://static.coddyshop.ru/cache/products/157/thumb_218.jpg",
+    "description": "Симулятор гонок GT World Challenge."
+  },
+  {
+    "id": 34,
+    "categoryId": 3,
+    "categoryName": "Компьютерные игры в Steam",
+    "type": "steam",
+    "name": "Geometry Dash",
+    "price": 60,
+    "image": "https://static.coddyshop.ru/cache/products/153/thumb_214.jpg",
+    "description": "Ритмичный платформер под электронную музыку. Прыгайте, летите и проходите уровни под бит!"
+  },
+  {
+    "id": 35,
+    "categoryId": 3,
+    "categoryName": "Компьютерные игры в Steam",
+    "type": "steam",
+    "name": "Undertale",
+    "price": 60,
+    "image": "https://static.coddyshop.ru/cache/products/152/thumb_213.jpg",
+    "description": "Культовая RPG, где вы можете никого не убивать. Уникальный сюжет, незабываемые персонажи и великолепный саундтрек."
+  },
+  {
+    "id": 36,
+    "categoryId": 3,
+    "categoryName": "Компьютерные игры в Steam",
+    "type": "steam",
+    "name": "R.E.P.O.",
+    "price": 60,
+    "image": "https://static.coddyshop.ru/cache/products/151/thumb_212.jpg",
+    "description": "Найдите ценные предметы и доставляйте их."
+  },
+  {
+    "id": 37,
+    "categoryId": 3,
+    "categoryName": "Компьютерные игры в Steam",
+    "type": "steam",
+    "name": "Euro Truck Simulator 2",
+    "price": 150,
+    "image": "https://static.coddyshop.ru/cache/products/150/thumb_211.jpg",
+    "description": "Станьте королем европейских дорог."
+  },
+  {
+    "id": 38,
+    "categoryId": 3,
+    "categoryName": "Компьютерные игры в Steam",
+    "type": "steam",
+    "name": "Hollow Knight",
+    "price": 80,
+    "image": "https://static.coddyshop.ru/cache/products/149/thumb_210.jpg",
+    "description": "Эпическое приключение в огромном разрушенном королевстве."
+  },
+  {
+    "id": 39,
+    "categoryId": 3,
+    "categoryName": "Компьютерные игры в Steam",
+    "type": "steam",
+    "name": "My Summer Car",
+    "price": 80,
+    "image": "https://static.coddyshop.ru/cache/products/148/thumb_209.jpg",
+    "description": "Симулятор жизни в финской деревне. Собирайте машину, заправляйте, гоняйте и выживайте."
+  },
+  {
+    "id": 40,
+    "categoryId": 3,
+    "categoryName": "Компьютерные игры в Steam",
+    "type": "steam",
+    "name": "BeamNG.drive",
+    "price": 120,
+    "image": "https://static.coddyshop.ru/cache/products/147/thumb_208.jpg",
+    "description": "Автомобильный симулятор на физике мягких объектов."
+  },
+  {
+    "id": 41,
+    "categoryId": 3,
+    "categoryName": "Компьютерные игры в Steam",
+    "type": "steam",
+    "name": "Pavlov",
+    "price": 85,
+    "image": "https://static.coddyshop.ru/cache/products/146/thumb_207.jpg",
+    "description": "Многопользовательский VR-шутер с реалистичным оружием и тактическими перестрелками."
+  },
+  {
+    "id": 42,
+    "categoryId": 19,
+    "categoryName": "Компьютерные игры Steam",
+    "type": "steam",
+    "name": "Among Us",
+    "price": 60,
+    "image": "https://static.coddyshop.ru/cache/products/145/thumb_206.jpg",
+    "description": "Игра для компании от 4 до 15 игроков о командной работе и предательстве."
+  },
+  {
+    "id": 43,
+    "categoryId": 19,
+    "categoryName": "Компьютерные игры Steam",
+    "type": "steam",
+    "name": "Portal",
+    "price": 80,
+    "image": "https://static.coddyshop.ru/cache/products/143/thumb_204.jpg",
+    "description": "Новая игра от Valve для одного игрока."
+  },
+  {
+    "id": 44,
+    "categoryId": 19,
+    "categoryName": "Компьютерные игры Steam",
+    "type": "steam",
+    "name": "Stray",
+    "price": 130,
+    "image": "https://static.coddyshop.ru/cache/products/126/thumb_166.jpg",
+    "description": "Приключение потерявшегося кота в кибергороде."
+  },
+  {
+    "id": 45,
+    "categoryId": 19,
+    "categoryName": "Компьютерные игры Steam",
+    "type": "steam",
+    "name": "Wallpaper Engine",
+    "price": 60,
+    "image": "https://static.coddyshop.ru/cache/products/108/thumb_138.jpg",
+    "description": "Устанавливайте живые обои на рабочий стол."
+  },
+  {
+    "id": 46,
+    "categoryId": 19,
+    "categoryName": "Компьютерные игры Steam",
+    "type": "steam",
+    "name": "Phasmophobia",
+    "price": 90,
+    "image": "https://static.coddyshop.ru/cache/products/92/thumb_116.jpg",
+    "description": "Кооперативная игра охота за привидениями."
+  },
+  {
+    "id": 47,
+    "categoryId": 19,
+    "categoryName": "Компьютерные игры Steam",
+    "type": "steam",
+    "name": "Valheim",
+    "price": 120,
+    "image": "https://static.coddyshop.ru/cache/products/82/thumb_105.jpg",
+    "description": "Выживание в фэнтезийном мире викингов."
+  },
+  {
+    "id": 48,
+    "categoryId": 19,
+    "categoryName": "Компьютерные игры Steam",
+    "type": "steam",
+    "name": "Garry's Mod",
+    "price": 100,
+    "image": "https://static.coddyshop.ru/cache/products/75/thumb_91.jpg",
+    "description": "Физическая песочница."
+  },
+  {
+    "id": 49,
+    "categoryId": 19,
+    "categoryName": "Компьютерные игры Steam",
+    "type": "steam",
+    "name": "Terraria",
+    "price": 60,
+    "image": "https://static.coddyshop.ru/cache/products/65/thumb_78.jpg",
+    "description": "Копайте, сражайтесь, исследуйте, стройте!"
+  }
+]

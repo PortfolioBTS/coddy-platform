@@ -1,0 +1,277 @@
+[
+  {
+    "id": "bgPF-VHdF5JS",
+    "createdAt": "2026-07-27T10:13:06.297Z",
+    "courseId": "W-TRcDQQ45qj",
+    "teacherId": "xTuDZzgwah4K",
+    "title": "3123e",
+    "description": "13f1ef",
+    "content": "",
+    "coverImage": "1785147201541-65356c365f0b6d7710351a6e.png",
+    "attachments": [
+      {
+        "filename": "1785147186288-ea030f6d64f1292fcf62f154.docx",
+        "originalName": "доп_почты.docx",
+        "size": 13005
+      }
+    ],
+    "video": null,
+    "deadline": "2026-08-08",
+    "updatedAt": "2026-07-27T10:13:21.663Z"
+  },
+  {
+    "id": "rcLqwbAHswBK",
+    "createdAt": "2026-07-27T10:14:07.457Z",
+    "courseId": "W-TRcDQQ45qj",
+    "teacherId": "xTuDZzgwah4K",
+    "title": "lgthtvt",
+    "description": "caljfn",
+    "content": "Задани:<div><div><ul><li>афуа</li><li>уауа</li><li>уауауа</li></ul></div></div>",
+    "coverImage": null,
+    "attachments": [
+      {
+        "filename": "1785147247152-4fa205356756e6c37639043b.pptx",
+        "originalName": "Ставрополь центр Презентация для родителей МК.pptx",
+        "size": 15745802
+      }
+    ],
+    "video": null,
+    "deadline": "2026-08-07"
+  },
+  {
+    "id": "uLWxPFSQAY3-",
+    "createdAt": "2026-07-30T16:37:30.607Z",
+    "courseId": "W-TRcDQQ45qj",
+    "teacherId": "xTuDZzgwah4K",
+    "title": "Разработка чат-бота для мини-игры висилица",
+    "description": "Создание бота на питоне",
+    "content": "Разработать бота с использованием библиотеки для <b>ТГ</b><br>Задачи:<div><ul><li>Создать бота</li><li>Подключить его в телеграмм</li><li>Пройти в боте 3 игры и сохранить их</li></ul></div>",
+    "coverImage": null,
+    "attachments": [
+      {
+        "filename": "1785429450603-e36296aaf66b4cace9c24d23.txt",
+        "originalName": "27 июл. 2026 г., 00_55_03.txt",
+        "size": 635
+      }
+    ],
+    "video": {
+      "type": "file",
+      "value": "1785429498366-8c6f4c2f9ada6c6228821966.mp4",
+      "originalName": "2025-11-17 15-01-11.mp4"
+    },
+    "deadline": "2026-08-06",
+    "alfacrmSubjectId": null,
+    "alfacrmSubjectName": null,
+    "updatedAt": "2026-07-30T16:38:18.380Z"
+  },
+  {
+    "id": "egsBVBYs5Dpy",
+    "createdAt": "2026-08-02T13:35:28.598Z",
+    "courseId": "WdOi3OXsyzQH",
+    "teacherId": "jSb8uClh8Qcv",
+    "title": "У",
+    "description": "",
+    "content": "",
+    "coverImage": null,
+    "attachments": [],
+    "video": null,
+    "deadline": null
+  },
+  {
+    "id": "CfvSdtS1KP3T",
+    "createdAt": "2026-08-02T13:36:50.590Z",
+    "courseId": "ChVj0XcBfP8s",
+    "teacherId": "CWq7so0OaxXk",
+    "title": "У",
+    "description": "",
+    "content": "",
+    "coverImage": null,
+    "attachments": [],
+    "video": null,
+    "deadline": null
+  },
+  {
+    "id": "E_ALsBj8EQw2",
+    "createdAt": "2026-08-02T13:39:06.790Z",
+    "courseId": "GqlKSItDaqnG",
+    "teacherId": "ZcH8J3gTSJId",
+    "title": "У",
+    "description": "",
+    "content": "",
+    "coverImage": null,
+    "attachments": [],
+    "video": null,
+    "deadline": null
+  },
+  {
+    "id": "KS3e3FddkQCt",
+    "createdAt": "2026-08-02T13:40:02.604Z",
+    "courseId": "m4AmGYbZcx6a",
+    "teacherId": "VcRC4YK_GafF",
+    "title": "У",
+    "description": "",
+    "content": "",
+    "coverImage": null,
+    "attachments": [],
+    "video": null,
+    "deadline": null
+  },
+  {
+    "id": "y90aVrSb46bK",
+    "createdAt": "2026-08-02T13:50:07.236Z",
+    "courseId": "mV0g_zOdyAjB",
+    "teacherId": "TnWJacSWd_yA",
+    "title": "У",
+    "description": "",
+    "content": "",
+    "coverImage": null,
+    "attachments": [],
+    "video": null,
+    "deadline": null
+  },
+  {
+    "id": "r48NoCxo0k70",
+    "createdAt": "2026-08-02T17:29:33.589Z",
+    "courseId": "W-TRcDQQ45qj",
+    "teacherId": "xTuDZzgwah4K",
+    "title": "Рисование портрета",
+    "description": "Набросать арт аниме персонажа",
+    "content": "",
+    "coverImage": null,
+    "attachments": [],
+    "video": null,
+    "deadline": "2026-08-30",
+    "alfacrmSubjectId": null,
+    "alfacrmSubjectName": null,
+    "updatedAt": "2026-08-02T17:29:46.825Z"
+  },
+  {
+    "id": "YTbicdB_4MDa",
+    "createdAt": "2026-08-02T18:40:18.427Z",
+    "courseId": "W-TRcDQQ45qj",
+    "teacherId": "xTuDZzgwah4K",
+    "title": "Тестирование гугл тестов",
+    "description": "",
+    "content": "",
+    "coverImage": null,
+    "attachments": [],
+    "video": null,
+    "deadline": "2026-08-18"
+  },
+  {
+    "id": "744pmPkHwtLo",
+    "createdAt": "2026-08-02T18:41:36.885Z",
+    "courseId": "W-TRcDQQ45qj",
+    "teacherId": "xTuDZzgwah4K",
+    "title": "тестирование гугл форм 2.0",
+    "description": "",
+    "content": "",
+    "coverImage": null,
+    "attachments": [],
+    "video": null,
+    "deadline": null
+  },
+  {
+    "id": "-CwR9O69l_6_",
+    "createdAt": "2026-08-02T18:53:15.569Z",
+    "courseId": "W-TRcDQQ45qj",
+    "teacherId": "xTuDZzgwah4K",
+    "title": "тест гугл форм 3.0",
+    "description": "",
+    "content": "",
+    "coverImage": null,
+    "attachments": [],
+    "video": null,
+    "deadline": null
+  },
+  {
+    "id": "icKHwrGh-VwQ",
+    "createdAt": "2026-08-02T19:03:23.271Z",
+    "courseId": "W-TRcDQQ45qj",
+    "teacherId": "xTuDZzgwah4K",
+    "title": "Тестирование теста 4.0",
+    "description": "",
+    "content": "",
+    "coverImage": "1785697403269-ce93bf3d1c68d6dbbd07980a.jpg",
+    "attachments": [],
+    "video": null,
+    "deadline": null
+  },
+  {
+    "id": "0Ut_iasTzFUG",
+    "createdAt": "2026-08-02T19:04:04.066Z",
+    "courseId": "W-TRcDQQ45qj",
+    "teacherId": "xTuDZzgwah4K",
+    "title": "тест 5.0",
+    "description": "",
+    "content": "",
+    "coverImage": "1785697444060-69e34a478d0a7c38908558f5.png",
+    "attachments": [],
+    "video": null,
+    "deadline": null
+  },
+  {
+    "id": "1byD7w0U9o7F",
+    "createdAt": "2026-08-05T07:28:33.984Z",
+    "courseId": "W-TRcDQQ45qj",
+    "teacherId": "xTuDZzgwah4K",
+    "title": "проверка уведомлений",
+    "description": "Создать текстовый документ с кодом вашей страницы на питоне",
+    "content": "СДелать пункты:<br><ol><li>добавить текст<br></li><li>снять редактирование</li><li>создать оболочку</li></ol>",
+    "coverImage": null,
+    "attachments": [
+      {
+        "filename": "1785914913980-4adf7974e75ce8ad6574d47b.py",
+        "originalName": "wifi.py",
+        "size": 664
+      }
+    ],
+    "video": null,
+    "deadline": "2026-08-15"
+  },
+  {
+    "id": "rFeT4johuLfk",
+    "createdAt": "2026-08-05T10:38:55.094Z",
+    "courseId": "W-TRcDQQ45qj",
+    "teacherId": "xTuDZzgwah4K",
+    "title": "фжупифзшки",
+    "description": "вавп",
+    "content": "",
+    "coverImage": null,
+    "attachments": [],
+    "video": null,
+    "deadline": null
+  },
+  {
+    "id": "_8Q_M8LJnuFa",
+    "createdAt": "2026-08-07T13:42:31.262Z",
+    "courseId": "W-TRcDQQ45qj",
+    "teacherId": "xTuDZzgwah4K",
+    "title": "agddrga",
+    "description": "",
+    "content": "",
+    "coverImage": null,
+    "attachments": [],
+    "video": null,
+    "deadline": null
+  },
+  {
+    "id": "trDW0EadOnEK",
+    "createdAt": "2026-08-11T07:44:27.459Z",
+    "courseId": "Yq5kI2bB4CUh",
+    "teacherId": "82SogPhRI_4P",
+    "title": "Rust начало",
+    "description": "Начало изучения синтаксиса языка Rust",
+    "content": "<ul><li>пвукааыввыапваывавынткеприваумыкрнептиаавупиервпутирпк</li></ul><ol><li>авыаываавыаваыа</li></ol>",
+    "coverImage": "1786434267458-c7783ec30ac03e10f10501c1.png",
+    "attachments": [
+      {
+        "filename": "1786434267458-03f72cace31da40556be801b.png",
+        "originalName": "image.png",
+        "size": 152548
+      }
+    ],
+    "video": null,
+    "deadline": "2026-08-12"
+  }
+]

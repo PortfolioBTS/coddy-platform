@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Заказы · CODDYSHOP</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <nav class="app-nav" id="app-nav"></nav>
+
+  <div class="wrap">
+    <div class="page-head">
+      <div>
+        <p class="page-head__eyebrow">Магазин</p>
+        <h1 class="page-head__title">Заказы</h1>
+        <p class="page-head__desc">Все заказы учеников из CODDYSHOP</p>
+      </div>
+    </div>
+
+    <div class="controls">
+      <div class="controls__row">
+        <input class="controls__search" id="search-input" placeholder="Поиск по ученику или товару...">
+      </div>
+      <div class="controls__row">
+        <button class="btn btn--sort is-active" id="tab-physical" data-type="physical">📦 Физические товары</button>
+        <button class="btn btn--sort" id="tab-steam" data-type="steam">🎮 Steam-игры</button>
+      </div>
+      <div class="controls__row" id="filter-row"></div>
+    </div>
+
+    <div class="panel">
+      <div class="panel__tab" id="panel-tab">Физические</div>
+      <div class="table-scroll" id="orders-scroll">
+        <table class="table" id="orders-table">
+          <thead id="orders-head"></thead>
+          <tbody id="orders-body"></tbody>
+        </table>
+      </div>
+      <p class="panel__count" id="orders-count"></p>
+      <p class="panel__count" id="orders-total" hidden></p>
+    </div>
+  </div>
+
+  <script src="/js/utils.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/app-shell.js"></script>
+  <script src="/js/pages/teacher-orders.js"></script>
+</body>
+</html>

@@ -1,0 +1,167 @@
+[
+  {
+    "id": "GkOkzRsJqOX3",
+    "createdAt": "2026-07-27T10:13:06.302Z",
+    "lessonId": "bgPF-VHdF5JS",
+    "teacherId": "xTuDZzgwah4K",
+    "title": "3123e",
+    "description": "13f1ef",
+    "deadline": "2026-08-08",
+    "updatedAt": "2026-07-27T10:13:21.668Z"
+  },
+  {
+    "id": "RogEpxh4gr70",
+    "createdAt": "2026-07-27T10:14:07.463Z",
+    "lessonId": "rcLqwbAHswBK",
+    "teacherId": "xTuDZzgwah4K",
+    "title": "lgthtvt",
+    "description": "caljfn",
+    "deadline": "2026-08-07"
+  },
+  {
+    "id": "7OoCE4lnkBgq",
+    "createdAt": "2026-07-30T16:37:30.610Z",
+    "lessonId": "uLWxPFSQAY3-",
+    "teacherId": "xTuDZzgwah4K",
+    "title": "Разработка чат-бота для мини-игры висилица",
+    "description": "Создание бота на питоне",
+    "deadline": "2026-08-06",
+    "updatedAt": "2026-07-30T16:38:18.384Z"
+  },
+  {
+    "id": "hFlMrjMzA5dU",
+    "createdAt": "2026-08-02T13:35:28.602Z",
+    "lessonId": "egsBVBYs5Dpy",
+    "teacherId": "jSb8uClh8Qcv",
+    "title": "У",
+    "description": "",
+    "deadline": null
+  },
+  {
+    "id": "5YXfwihCVNm2",
+    "createdAt": "2026-08-02T13:36:50.593Z",
+    "lessonId": "CfvSdtS1KP3T",
+    "teacherId": "CWq7so0OaxXk",
+    "title": "У",
+    "description": "",
+    "deadline": null
+  },
+  {
+    "id": "ZS9kyXyHR5pE",
+    "createdAt": "2026-08-02T13:39:06.797Z",
+    "lessonId": "E_ALsBj8EQw2",
+    "teacherId": "ZcH8J3gTSJId",
+    "title": "У",
+    "description": "",
+    "deadline": null
+  },
+  {
+    "id": "iP9cmR0MT8Fh",
+    "createdAt": "2026-08-02T13:40:02.607Z",
+    "lessonId": "KS3e3FddkQCt",
+    "teacherId": "VcRC4YK_GafF",
+    "title": "У",
+    "description": "",
+    "deadline": null
+  },
+  {
+    "id": "d5D333K_b8Pu",
+    "createdAt": "2026-08-02T13:50:07.240Z",
+    "lessonId": "y90aVrSb46bK",
+    "teacherId": "TnWJacSWd_yA",
+    "title": "У",
+    "description": "",
+    "deadline": null
+  },
+  {
+    "id": "XRxiQ0k5aHc5",
+    "createdAt": "2026-08-02T17:29:33.591Z",
+    "lessonId": "r48NoCxo0k70",
+    "teacherId": "xTuDZzgwah4K",
+    "title": "Рисование портрета",
+    "description": "Набросать арт аниме персонажа",
+    "deadline": "2026-08-30",
+    "updatedAt": "2026-08-02T17:29:46.828Z"
+  },
+  {
+    "id": "r6H1wEz1iFiH",
+    "createdAt": "2026-08-02T18:40:18.429Z",
+    "lessonId": "YTbicdB_4MDa",
+    "teacherId": "xTuDZzgwah4K",
+    "title": "Тестирование гугл тестов",
+    "description": "",
+    "deadline": "2026-08-18"
+  },
+  {
+    "id": "cvbsq7inwc34",
+    "createdAt": "2026-08-02T18:41:36.888Z",
+    "lessonId": "744pmPkHwtLo",
+    "teacherId": "xTuDZzgwah4K",
+    "title": "тестирование гугл форм 2.0",
+    "description": "",
+    "deadline": null
+  },
+  {
+    "id": "f27mGsr8LRgM",
+    "createdAt": "2026-08-02T18:53:15.572Z",
+    "lessonId": "-CwR9O69l_6_",
+    "teacherId": "xTuDZzgwah4K",
+    "title": "тест гугл форм 3.0",
+    "description": "",
+    "deadline": null
+  },
+  {
+    "id": "ZJ1LiRxveec8",
+    "createdAt": "2026-08-02T19:03:23.272Z",
+    "lessonId": "icKHwrGh-VwQ",
+    "teacherId": "xTuDZzgwah4K",
+    "title": "Тестирование теста 4.0",
+    "description": "",
+    "deadline": null
+  },
+  {
+    "id": "kvnUOx9wEFCH",
+    "createdAt": "2026-08-02T19:04:04.068Z",
+    "lessonId": "0Ut_iasTzFUG",
+    "teacherId": "xTuDZzgwah4K",
+    "title": "тест 5.0",
+    "description": "",
+    "deadline": null
+  },
+  {
+    "id": "XgHJS0LA7OHp",
+    "createdAt": "2026-08-05T07:28:33.987Z",
+    "lessonId": "1byD7w0U9o7F",
+    "teacherId": "xTuDZzgwah4K",
+    "title": "проверка уведомлений",
+    "description": "Создать текстовый документ с кодом вашей страницы на питоне",
+    "deadline": "2026-08-15"
+  },
+  {
+    "id": "qVNgsn7BARZ2",
+    "createdAt": "2026-08-05T10:38:55.104Z",
+    "lessonId": "rFeT4johuLfk",
+    "teacherId": "xTuDZzgwah4K",
+    "title": "фжупифзшки",
+    "description": "вавп",
+    "deadline": null
+  },
+  {
+    "id": "Zek_xXzvhNYi",
+    "createdAt": "2026-08-07T13:42:31.268Z",
+    "lessonId": "_8Q_M8LJnuFa",
+    "teacherId": "xTuDZzgwah4K",
+    "title": "agddrga",
+    "description": "",
+    "deadline": null
+  },
+  {
+    "id": "Wqy6pmWapXxe",
+    "createdAt": "2026-08-11T07:44:27.461Z",
+    "lessonId": "trDW0EadOnEK",
+    "teacherId": "82SogPhRI_4P",
+    "title": "Rust начало",
+    "description": "Начало изучения синтаксиса языка Rust",
+    "deadline": "2026-08-12"
+  }
+]

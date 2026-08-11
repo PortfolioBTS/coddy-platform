@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ученики · Классный журнал</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <nav class="app-nav" id="app-nav"></nav>
+
+  <div class="wrap wrap--wide">
+    <div class="page-head">
+      <div>
+        <p class="page-head__eyebrow">Раздел · Ученики</p>
+        <h1 class="page-head__title">Ученики</h1>
+        <p class="page-head__desc">Все зарегистрированные ученики платформы. Подключайте их к курсам в настройках курса.</p>
+      </div>
+      <button class="btn btn--red" type="button" id="import-btn" hidden>⬇️ Импорт учеников</button>
+    </div>
+    <div class="controls" id="controls" hidden>
+      <div class="controls__row">
+        <input class="controls__search" type="text" id="search-input" placeholder="Поиск по имени, фамилии, телефону или почте…">
+      </div>
+      <div class="controls__row">
+        <span class="controls__label">Фильтр по городу</span>
+        <select class="controls__select" id="city-filter">
+          <option value="all">Все города</option>
+        </select>
+      </div>
+      <span class="controls__label" id="students-count"></span>
+    </div>
+    <div id="content"><p class="muted">Загрузка…</p></div>
+  </div>
+
+  <!-- Модалка импорта учеников -->
+  <div class="modal-overlay" id="import-modal" hidden>
+    <div class="modal modal--wide" role="dialog" aria-modal="true">
+      <span class="modal__ribbon">⬇️</span>
+      <button class="modal__close" type="button" data-modal-close aria-label="Закрыть">✕</button>
+      <h2 class="modal__title">Импорт учеников</h2>
+
+      <div id="import-upload">
+        <p class="modal__meta">Загрузите таблицу (CSV, XLSX или XLS) с данными учеников. Для каждого нового ученика автоматически создадутся логин и пароль — вы получите их списком и выдадите ученикам. Существующие аккаунты не изменятся и не удалятся.</p>
+        <div class="panel" style="margin-bottom:14px;">
+          <span class="panel__tab">Требуемые колонки</span>
+          <ul class="muted" style="margin:8px 0 0; padding-left:18px; line-height:1.7;">
+            <li><b>Фамилия</b>, <b>Имя</b>, <b>Город</b>, <b>Телефон</b> — обязательные.</li>
+            <li><b>Почта</b> — необязательная: если её нет, логин сгенерируется автоматически.</li>
+            <li><b>Дата рождения</b> — необязательная, в формате ДД.ММ.ГГГГ.</li>
+          </ul>
+          <button class="btn btn--sm" type="button" id="template-btn" style="margin-top:12px;">⬇️ Скачать шаблон</button>
+        </div>
+        <form class="form" id="import-form">
+          <ul class="error-list" id="import-errors" hidden></ul>
+          <div class="field">
+            <label class="field__label" for="import-file">Файл с таблицей</label>
+            <input class="input" type="file" id="import-file" accept=".csv,.xlsx,.xls" required>
+            <span class="field__hint" id="import-file-name"></span>
+          </div>
+          <div class="form-actions">
+            <button class="btn btn--red" type="submit">Импортировать</button>
+            <button class="btn btn--ghost" type="button" data-modal-close>Отмена</button>
+          </div>
+        </form>
+      </div>
+
+      <div id="import-result" hidden>
+        <p class="modal__meta">Импорт завершён. Данные для выдачи ученикам — ниже.</p>
+        <div class="import-summary" id="import-summary"></div>
+        <div class="table-scroll" style="margin:12px 0;">
+          <table class="table" id="import-table">
+            <thead><tr><th>#</th><th>Фамилия</th><th>Имя</th><th>Логин</th><th>Пароль</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <div class="form-actions">
+          <button class="btn btn--red" type="button" id="download-credentials">⬇️ Скачать данные для выдачи</button>
+          <button class="btn btn--ghost" type="button" id="import-done">Готово</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/utils.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/app-shell.js"></script>
+  <script src="/js/ui.js"></script>
+  <script src="/js/pages/teacher-students.js"></script>
+</body>
+</html>

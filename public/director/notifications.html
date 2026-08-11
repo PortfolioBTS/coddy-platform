@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Оповещения · Классный журнал</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <nav class="app-nav" id="app-nav"></nav>
+
+  <div class="wrap">
+    <div class="page-head">
+      <div>
+        <p class="page-head__eyebrow">Раздел · Оповещения</p>
+        <h1 class="page-head__title">Оповещения</h1>
+        <p class="page-head__desc">Отправьте сообщение ученикам и педагогам. Оповещение появится у них в виде всплывающего окна справа-снизу и в колокольчике.</p>
+      </div>
+    </div>
+
+    <form class="form" id="notif-form">
+      <div class="field">
+        <label class="field__label" for="notif-title">Заголовок</label>
+        <input class="input" type="text" id="notif-title" maxlength="120" placeholder="Например: Расписание на неделю">
+      </div>
+      <div class="field">
+        <label class="field__label" for="notif-message">Сообщение</label>
+        <textarea class="textarea" id="notif-message" rows="5" placeholder="Текст оповещения…"></textarea>
+      </div>
+
+      <div class="field">
+        <span class="field__label">Кому отправить</span>
+        <div class="radio-row">
+          <label class="radio-row__item"><input type="radio" name="notif-target" value="all" checked><span>Всем</span></label>
+          <label class="radio-row__item"><input type="radio" name="notif-target" value="teachers"><span>Педагогам</span></label>
+          <label class="radio-row__item"><input type="radio" name="notif-target" value="students"><span>Ученикам</span></label>
+          <label class="radio-row__item"><input type="radio" name="notif-target" value="specific"><span>Выбрать пользователей</span></label>
+        </div>
+      </div>
+
+      <div class="field" id="specific-block" hidden>
+        <span class="field__label">Выберите пользователей</span>
+        <input class="recipient-search" type="text" id="specific-search" placeholder="Поиск по имени, фамилии или почте…" style="margin-bottom:8px;">
+        <div class="checkbox-grid checkbox-grid--list" id="specific-grid">
+          <span class="checkbox-grid__empty">Загрузка…</span>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button class="btn btn--red" type="submit" id="notif-submit">Отправить оповещение</button>
+      </div>
+      <ul class="error-list" id="notif-errors" hidden></ul>
+    </form>
+  </div>
+
+  <script src="/js/utils.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/app-shell.js"></script>
+  <script src="/js/ui.js"></script>
+  <script src="/js/pages/director-notifications.js"></script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Профиль · Классный журнал</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <nav class="app-nav" id="app-nav"></nav>
+
+  <div class="wrap">
+    <div class="page-head">
+      <div>
+        <p class="page-head__eyebrow">Личная карточка</p>
+        <h1 class="page-head__title">Профиль</h1>
+      </div>
+    </div>
+    <div id="content"><p class="muted">Загрузка…</p></div>
+  </div>
+
+  <!-- Модалка редактирования данных -->
+  <div class="modal-overlay" id="edit-modal" hidden>
+    <div class="modal" role="dialog" aria-modal="true">
+      <span class="modal__ribbon">✎</span>
+      <button class="modal__close" type="button" data-modal-close aria-label="Закрыть">✕</button>
+      <h2 class="modal__title">Редактировать данные</h2>
+      <p class="modal__meta">Измените нужные поля и сохраните</p>
+      <form class="form" id="edit-form">
+        <ul class="error-list" id="edit-errors" hidden></ul>
+        <div class="form-grid">
+          <div class="field">
+            <label class="field__label" for="edit-firstName">Имя</label>
+            <input class="input" type="text" id="edit-firstName" required>
+          </div>
+          <div class="field">
+            <label class="field__label" for="edit-lastName">Фамилия</label>
+            <input class="input" type="text" id="edit-lastName" required>
+          </div>
+        </div>
+        <div class="form-grid">
+          <div class="field">
+            <label class="field__label" for="edit-city">Город</label>
+            <select class="select" id="edit-city" required>
+              <option value="">Выберите город</option>
+              <option value="Адлер">Адлер</option>
+              <option value="Армавир">Армавир</option>
+              <option value="Ессентуки">Ессентуки</option>
+              <option value="Кисловодск">Кисловодск</option>
+              <option value="Краснодар">Краснодар</option>
+              <option value="Минводы">Минводы</option>
+              <option value="Невинномысск">Невинномысск</option>
+              <option value="Пятигорск">Пятигорск</option>
+              <option value="Сочи">Сочи</option>
+              <option value="Ставрополь">Ставрополь</option>
+            </select>
+          </div>
+          <div class="field">
+            <label class="field__label" for="edit-phone">Номер телефона</label>
+            <input class="input" type="tel" id="edit-phone" inputmode="numeric" pattern="[\d+\-() ]{5,20}" maxlength="20" required>
+          </div>
+        </div>
+        <div class="field">
+          <label class="field__label" for="edit-email">Электронная почта</label>
+          <input class="input" type="email" id="edit-email" autocomplete="email" required>
+        </div>
+        <div class="form-grid">
+          <div class="field">
+            <label class="field__label" for="edit-max">Ник в MAX</label>
+            <input class="input" type="text" id="edit-max" placeholder="max_username" maxlength="32" autocomplete="off">
+          </div>
+        </div>
+        <div class="form-actions">
+          <button class="btn btn--red" type="submit">Сохранить</button>
+          <button class="btn btn--ghost" type="button" data-modal-close>Отмена</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Модалка смены пароля -->
+  <div class="modal-overlay" id="password-modal" hidden>
+    <div class="modal" role="dialog" aria-modal="true">
+      <span class="modal__ribbon">🔑</span>
+      <button class="modal__close" type="button" data-modal-close aria-label="Закрыть">✕</button>
+      <h2 class="modal__title">Сменить пароль</h2>
+      <p class="modal__meta">Введите текущий пароль и новый</p>
+      <form class="form" id="password-form">
+        <ul class="error-list" id="password-errors" hidden></ul>
+        <div class="field">
+          <label class="field__label" for="pw-current">Текущий пароль</label>
+          <input class="input" type="password" id="pw-current" autocomplete="current-password" required>
+        </div>
+        <div class="field">
+          <label class="field__label" for="pw-new">Новый пароль</label>
+          <input class="input" type="password" id="pw-new" minlength="6" autocomplete="new-password" required>
+          <span class="field__hint">Не короче 6 символов</span>
+        </div>
+        <div class="field">
+          <label class="field__label" for="pw-confirm">Повтор нового пароля</label>
+          <input class="input" type="password" id="pw-confirm" minlength="6" autocomplete="new-password" required>
+        </div>
+        <div class="form-actions">
+          <button class="btn btn--red" type="submit">Сменить пароль</button>
+          <button class="btn btn--ghost" type="button" data-modal-close>Отмена</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="/js/utils.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/app-shell.js"></script>
+  <script src="/js/ui.js"></script>
+  <script src="/js/pages/profile.js"></script>
+</body>
+</html>

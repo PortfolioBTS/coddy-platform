@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="page-title">Новый тест · Классный журнал</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <nav class="app-nav" id="app-nav"></nav>
+
+  <div class="wrap">
+    <a class="back-link" id="back-link" href="/teacher/courses.html">← Назад</a>
+
+    <div class="page-head">
+      <div>
+        <p class="page-head__eyebrow" id="eyebrow">Новый тест</p>
+        <h1 class="page-head__title" id="heading">Создать тест</h1>
+        <p class="page-head__desc">Тест привязывается к уроку. Ученики проходят его после изучения материала.</p>
+      </div>
+    </div>
+
+    <form class="form" id="test-form">
+      <div class="form-grid">
+        <div class="field">
+          <label class="field__label" for="title">Название теста</label>
+          <input class="input" type="text" id="title" name="title" required>
+        </div>
+        <div class="field">
+          <label class="field__label" for="attempts">Количество попыток</label>
+          <select class="select" id="attempts" name="attempts">
+            <option value="1">1 попытка</option>
+            <option value="2">2 попытки</option>
+            <option value="3">3 попытки</option>
+            <option value="0">Без ограничений</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field__label" for="description">Описание (необязательно)</label>
+        <textarea class="textarea" id="description" name="description" rows="2" placeholder="Инструкция для учеников, что повторить перед тестом"></textarea>
+      </div>
+
+      <label class="field checkbox-field">
+        <input type="checkbox" id="showResults" name="showResults">
+        <span>Показывать ученику правильные ответы после прохождения</span>
+      </label>
+
+      <div class="field">
+        <span class="field__label">Вопросы</span>
+        <div id="questions-container"></div>
+        <div class="form-actions">
+          <button class="btn" type="button" id="add-question-btn">+ Добавить вопрос</button>
+          <button class="btn btn--ghost" type="button" id="import-google-btn">Загрузить из Google Формы</button>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button class="btn btn--red" type="submit" id="submit-btn">Сохранить тест</button>
+        <a class="btn btn--ghost" href="/teacher/courses.html" id="cancel-link">Отмена</a>
+      </div>
+
+      <ul class="error-list" id="form-errors" hidden></ul>
+    </form>
+  </div>
+
+  <!-- Модалка импорта вопросов из Google Формы -->
+  <div class="modal-overlay" id="import-google-modal" hidden>
+    <div class="modal" role="dialog" aria-modal="true">
+      <span class="modal__ribbon">🌐</span>
+      <button class="modal__close" type="button" data-modal-close aria-label="Закрыть">✕</button>
+      <h2 class="modal__title">Импорт из Google Формы</h2>
+      <p class="modal__meta">Вставьте ссылку на форму или её iframe-код. Форма должна быть открыта для просмотра по ссылке.</p>
+      <ul class="error-list" id="import-google-errors" hidden></ul>
+      <div class="form">
+        <div class="field">
+          <label class="field__label" for="import-google-input">Ссылка или iframe-код</label>
+          <textarea class="textarea" id="import-google-input" rows="4" placeholder="https://docs.google.com/forms/d/e/.../viewform?embedded=true"></textarea>
+          <span class="field__hint">Вопросы с вариантами ответов будут добавлены в тест. Правильные ответы перенести нельзя — отметьте их вручную.</span>
+        </div>
+        <div class="form-actions">
+          <button class="btn btn--red" type="button" id="import-google-submit">Импортировать</button>
+          <button class="btn btn--ghost" type="button" data-modal-close>Отмена</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/utils.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/app-shell.js"></script>
+  <script src="/js/ui.js"></script>
+  <script src="/js/pages/teacher-test-form.js"></script>
+</body>
+</html>

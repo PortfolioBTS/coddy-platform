@@ -1,0 +1,74 @@
+[
+  {
+    "id": "aUhN8Fj9wruy",
+    "createdAt": "2026-08-02T20:12:16.986Z",
+    "studentId": "QI0y741dYBWR",
+    "certNumber": "5400743968",
+    "issueDate": "31.05.2026",
+    "courseName": "Unity 3D",
+    "startDate": "01.01.2026",
+    "duration": "9 месяцев",
+    "file": "cert-1785701536983-e10a506366d4f53b8ceb.png",
+    "createdBy": "dir-danila"
+  },
+  {
+    "id": "QNVeAAH675_8",
+    "createdAt": "2026-08-02T20:31:31.406Z",
+    "studentId": "eASM0yGawH0o",
+    "certNumber": "5400743968",
+    "issueDate": "06.08.2021",
+    "courseName": "Unity 3D",
+    "startDate": "02.02.2021",
+    "duration": "6 месяцев",
+    "file": "cert-1785702691404-832266920d1fe7d64032.png",
+    "createdBy": "dir-danila"
+  },
+  {
+    "id": "mdYMZlNS6sg6",
+    "createdAt": "2026-08-02T20:33:43.745Z",
+    "studentId": "EZRVsXc5VLO-",
+    "certNumber": "5400743968",
+    "issueDate": "06.08.2021",
+    "courseName": "Unity 3D",
+    "startDate": "02.02.2021",
+    "duration": "6 месяцев",
+    "file": "cert-1785702823739-433bff2c8312b5e7079b.png",
+    "createdBy": "dir-danila"
+  },
+  {
+    "id": "GF9tutl-0rS_",
+    "createdAt": "2026-08-02T20:35:48.077Z",
+    "studentId": "OxTP6vcAUEj2",
+    "certNumber": "5400743968",
+    "issueDate": "06.08.2021",
+    "courseName": "Unity 3D",
+    "startDate": "02.02.2021",
+    "duration": "6 месяцев",
+    "file": "cert-1785702948069-b3b6dd72770fed14b021.png",
+    "createdBy": "dir-danila"
+  },
+  {
+    "id": "N1wJoSX9BJKz",
+    "createdAt": "2026-08-05T06:00:52.161Z",
+    "studentId": "EZRVsXc5VLO-",
+    "certNumber": "5400743968",
+    "issueDate": "06.08.2021",
+    "courseName": "Unity 3D",
+    "startDate": "02.02.2021",
+    "duration": "6 месяцев",
+    "file": "cert-1785909652157-dcad4e8b721f679ac0e2.png",
+    "createdBy": "dir-danila"
+  },
+  {
+    "id": "njxe27zHqzFq",
+    "createdAt": "2026-08-05T07:35:14.819Z",
+    "studentId": "eASM0yGawH0o",
+    "certNumber": "5400743968",
+    "issueDate": "06.08.2021",
+    "courseName": "Unity 3D",
+    "startDate": "02.02.2021",
+    "duration": "6 месяцев",
+    "file": "cert-1785915314815-818e40ce8f4a7470b4a3.png",
+    "createdBy": "dir-danila"
+  }
+]
