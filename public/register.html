@@ -14,11 +14,7 @@
     <div class="hero__inner">
       <p class="hero__eyebrow">Классный журнал · новая запись</p>
       <h1 class="hero__title">Регистрация<span class="hero__title-sub">ВЫБЕРИТЕ РОЛЬ И ЗАПОЛНИТЕ КАРТОЧКУ</span></h1>
-<<<<<<< HEAD
       <p class="hero__desc">Учитель ведёт курсы и проверяет работы. Ученик подключается к курсам и сдаёт задания. Родитель следит за успехами ребёнка и обратной связью от преподавателя. Роль нельзя изменить позже, выбирайте внимательно.</p>
-=======
-      <p class="hero__desc">Учитель ведёт курсы и проверяет работы. Ученик подключается к курсам и сдаёт задания. Роль нельзя изменить позже, выбирайте внимательно.</p>
->>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
     </div>
   </header>
 
@@ -41,13 +37,10 @@
               <input class="role-switch__input" type="radio" name="role" id="role-teacher" value="teacher">
               <label class="role-switch__label" for="role-teacher"><span class="role-switch__icon">🏫</span> Учитель</label>
             </div>
-<<<<<<< HEAD
             <div class="role-switch__option">
               <input class="role-switch__input" type="radio" name="role" id="role-parent" value="parent">
               <label class="role-switch__label" for="role-parent"><span class="role-switch__icon">👪</span> Родитель</label>
             </div>
-=======
->>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
           </div>
         </div>
 
@@ -96,7 +89,6 @@
           <span class="field__hint">Необязательно, возраст отобразится в профиле</span>
         </div>
 
-<<<<<<< HEAD
         <div class="field" id="teacher-code-field" hidden>
           <label class="field__label" for="teacherCode">Код педагога</label>
           <input class="input" type="text" id="teacherCode" name="teacherCode" maxlength="40" autocomplete="off">
@@ -114,8 +106,6 @@
           <span class="field__hint">Логин — это почта, которой ребёнок входит на платформу. Если у вас учится несколько детей, добавьте логин каждого.</span>
         </div>
 
-=======
->>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
         <div class="field">
           <label class="field__label" for="email">Электронная почта</label>
           <input class="input" type="email" id="email" name="email" required>
@@ -132,6 +122,16 @@
             <input class="input" type="password" id="passwordConfirm" name="passwordConfirm" minlength="6" required>
           </div>
         </div>
+
+        <label class="field checkbox-field checkbox-field--consent">
+          <input type="checkbox" id="consent" name="consent" required>
+          <span>
+            Я согласен(на) с
+            <a class="consent-link" href="/legal/consent.html" target="_blank" rel="noopener">обработкой персональных данных</a>,
+            <a class="consent-link" href="/legal/user-agreement.html" target="_blank" rel="noopener">Пользовательским соглашением</a>
+            и <a class="consent-link" href="/legal/offer.html" target="_blank" rel="noopener">Договором оферты</a>
+          </span>
+        </label>
 
         <div class="form-actions">
           <button class="btn btn--red btn--block" type="submit">Зарегистрироваться</button>

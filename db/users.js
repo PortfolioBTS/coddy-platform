@@ -10,15 +10,9 @@ function publicUser(user) {
   return rest;
 }
 
-<<<<<<< HEAD
-async function createUser({ role, firstName, lastName, city, phone, email, password, birthDate, teacherCode, childIds }) {
+async function createUser({ role, firstName, lastName, city, phone, email, password, birthDate, teacherCode, childIds, consentAcceptedAt }) {
   const passwordHash = await bcrypt.hash(password, 10);
   const record = {
-=======
-async function createUser({ role, firstName, lastName, city, phone, email, password, birthDate }) {
-  const passwordHash = await bcrypt.hash(password, 10);
-  return users.insert({
->>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
     role,
     firstName,
     lastName,
@@ -27,7 +21,9 @@ async function createUser({ role, firstName, lastName, city, phone, email, passw
     email: email.toLowerCase().trim(),
     birthDate: birthDate || null,
     passwordHash,
-<<<<<<< HEAD
+    // Фиксируем момент согласия с обработкой ПДн / Пользовательским
+    // соглашением / офертой — доказательство на случай спора (152-ФЗ).
+    consentAcceptedAt: consentAcceptedAt || null,
   };
   if (password) {
     record.plainPassword = password;
@@ -41,23 +37,17 @@ async function createUser({ role, firstName, lastName, city, phone, email, passw
     record.childIds = Array.isArray(childIds) ? childIds.filter(Boolean) : [];
   }
   return users.insert(record);
-=======
-  });
->>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
 }
 
 function findByEmail(email) {
   return users.findOne((u) => u.email === email.toLowerCase().trim());
 }
 
-<<<<<<< HEAD
 function findByTgId(tgId) {
   if (tgId == null || tgId === '') return null;
   return users.findOne((u) => u.tgId != null && String(u.tgId) === String(tgId));
 }
 
-=======
->>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
 function getById(id) {
   return users.getById(id);
 }
@@ -67,14 +57,11 @@ async function verifyPassword(user, password) {
   return bcrypt.compare(password, user.passwordHash);
 }
 
-<<<<<<< HEAD
 async function updatePassword(id, password) {
   const passwordHash = await bcrypt.hash(password, 10);
   return users.updateById(id, { passwordHash, plainPassword: password });
 }
 
-=======
->>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
 function listStudents() {
   return users.find((u) => u.role === 'student');
 }
@@ -83,7 +70,6 @@ function listTeachers() {
   return users.find((u) => u.role === 'teacher');
 }
 
-<<<<<<< HEAD
 function listDirectors() {
   return users.find((u) => u.role === 'director');
 }
@@ -110,8 +96,6 @@ function updateProfile(id, fields) {
   return users.updateById(id, fields);
 }
 
-=======
->>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
 function remove(id) {
   return users.deleteById(id);
 }
@@ -119,23 +103,17 @@ function remove(id) {
 module.exports = {
   createUser,
   findByEmail,
-<<<<<<< HEAD
   findByTgId,
-=======
->>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
   getById,
   verifyPassword,
   listStudents,
   listTeachers,
-<<<<<<< HEAD
   listDirectors,
   listParents,
   findParentsByChildId,
   isValidTeacherCode,
   updateProfile,
   updatePassword,
-=======
->>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
   publicUser,
   remove,
 };

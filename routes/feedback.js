@@ -12,6 +12,7 @@ const usersDb = require('../db/users');
 const feedbacksDb = require('../db/feedbacks');
 const { requireAuth, requireRole } = require('../middleware/auth');
 const { feedbackUpload, UPLOAD_DIR, FEEDBACK_PROJECT_MAX_FILES } = require('../middleware/upload');
+const { computeAutoHomeworkPercent } = require('../utils/homeworkStats');
 
 const router = express.Router();
 
@@ -83,6 +84,23 @@ router.get('/api/teacher/feedback/courses/:courseId/students/:studentId', (req, 
   if (!student) return;
   const entries = feedbacksDb.listByCourseAndStudent(course.id, student.id);
   res.json({ course, student: withParents(student), entries });
+});
+
+// Авто-% выполненных дз за месяц — считается по факту сданных работ (см.
+// utils/homeworkStats.js). Учитель по-прежнему может задать своё значение
+// вручную в форме — этот эндпоинт лишь подсказывает посчитанное число,
+// ничего не сохраняет.
+router.get('/api/teacher/feedback/courses/:courseId/students/:studentId/homework-auto', (req, res) => {
+  const course = ownCourseForTeacher(req, res, req.params.courseId);
+  if (!course) return;
+  const student = courseStudent(req, res, course);
+  if (!student) return;
+  const month = (req.query.month || '').trim();
+  if (!MONTH_RE.test(month)) {
+    return res.status(400).json({ message: 'Укажите корректный месяц.' });
+  }
+  const stats = computeAutoHomeworkPercent(course.id, student.id, month);
+  res.json(stats);
 });
 
 // Создать/обновить отзыв за месяц (upsert по courseId+studentId+month).

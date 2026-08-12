@@ -17,10 +17,7 @@
   let state = null;
 
   setupAnswerForm();
-<<<<<<< HEAD
   setupTestForm();
-=======
->>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
   await load();
 
   async function load() {
@@ -80,17 +77,13 @@
           <div class="side-block" id="homework-block"></div>
         </div>
       </div>
-<<<<<<< HEAD
 
       ${renderTestSection()}
-=======
->>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
     `;
 
     renderHomeworkBlock(submission);
   }
 
-<<<<<<< HEAD
   function renderTestSection() {
     const test = state.test;
     const attempts = state.attempts || [];
@@ -292,8 +285,6 @@
     if (box) box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
 
-=======
->>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
   // Домашнее задание сдаётся прямо в уроке — кнопка стоит в правой колонке,
   // сразу под блоком «Файлы», и открывает модалку с формой ответа.
   function renderHomeworkBlock(submission) {

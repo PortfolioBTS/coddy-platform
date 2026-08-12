@@ -5,12 +5,9 @@ const coursesDb = require('../db/courses');
 const lessonsDb = require('../db/lessons');
 const homeworksDb = require('../db/homeworks');
 const submissionsDb = require('../db/submissions');
-<<<<<<< HEAD
 const testsDb = require('../db/tests');
 const testAttemptsDb = require('../db/testAttempts');
 const certificatesDb = require('../db/certificates');
-=======
->>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
 const { requireAuth, requireRole } = require('../middleware/auth');
 const { homeworkUpload } = require('../middleware/upload');
 
@@ -27,7 +24,6 @@ function enrolledCourse(req, res, courseId) {
   return course;
 }
 
-<<<<<<< HEAD
 // Копия теста для ученика: вопросы и варианты без поля correct — правильные
 // ответы не должны быть видны ни до, ни во время прохождения.
 function sanitizeTest(test) {
@@ -63,8 +59,6 @@ function gradeAnswers(test, answers) {
   return { score, maxScore: test.questions.length, review };
 }
 
-=======
->>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
 router.get('/api/student/courses', (req, res) => {
   const courses = coursesDb.listForStudent(req.user.id).map((c) => ({
     ...c,
@@ -73,14 +67,11 @@ router.get('/api/student/courses', (req, res) => {
   res.json({ courses });
 });
 
-<<<<<<< HEAD
 router.get('/api/student/certificates', (req, res) => {
   const certificates = certificatesDb.listByStudent(req.user.id);
   res.json({ certificates });
 });
 
-=======
->>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
 router.get('/api/student/courses/:id', (req, res) => {
   const course = enrolledCourse(req, res, req.params.id);
   if (!course) return;
@@ -98,7 +89,6 @@ router.get('/api/student/lessons/:id', (req, res) => {
   // ответ можно сдавать сразу же.
   const homework = homeworksDb.ensureForLesson(lesson);
   const submission = submissionsDb.getByHomeworkAndStudent(homework.id, req.user.id);
-<<<<<<< HEAD
 
   const test = testsDb.getByLesson(lesson.id);
   const attempts = test ? testAttemptsDb.listByTestAndStudent(test.id, req.user.id) : [];
@@ -123,9 +113,6 @@ router.get('/api/student/lessons/:id', (req, res) => {
       return base;
     }),
   });
-=======
-  res.json({ lesson, course, homework, submission });
->>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
 });
 
 router.post('/api/student/lessons/:id/homework/submit', homeworkUpload, (req, res) => {
@@ -172,7 +159,6 @@ router.post('/api/student/lessons/:id/homework/submit', homeworkUpload, (req, re
   res.status(201).json({ submission });
 });
 
-<<<<<<< HEAD
 router.post('/api/student/lessons/:id/test/submit', (req, res) => {
   const lesson = lessonsDb.getById(req.params.id);
   if (!lesson) return res.status(404).json({ message: 'Урок не найден.' });
@@ -216,6 +202,4 @@ router.post('/api/student/lessons/:id/test/submit', (req, res) => {
   res.status(201).json({ attempt: base, remainingAttempts: remaining });
 });
 
-=======
->>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
 module.exports = router;

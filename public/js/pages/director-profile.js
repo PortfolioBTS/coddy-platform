@@ -91,6 +91,15 @@
             </select>
           </div>
         </div>
+      </div>
+
+      <div class="profile-section">
+        <div class="profile-section__title">Правовые документы</div>
+        <div class="profile-settings">
+          <a class="btn" href="/legal/consent.html" target="_blank" rel="noopener">📄 Согласие на обработку персональных данных</a>
+          <a class="btn" href="/legal/user-agreement.html" target="_blank" rel="noopener">📄 Пользовательское соглашение</a>
+          <a class="btn" href="/legal/offer.html" target="_blank" rel="noopener">📄 Договор оферты</a>
+        </div>
       </div>`;
 
     document.getElementById('theme-select').addEventListener('change', (e) => {

@@ -3,15 +3,12 @@
   const user = await bootPage(requiredRole);
   if (!user) return;
 
-<<<<<<< HEAD
   const isDirector = user.role === 'director';
   if (isDirector) {
     const btn = document.getElementById('add-product-btn');
     if (btn) btn.hidden = false;
   }
 
-=======
->>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
   let currentProduct = null;
   let categories = [];
   let products = [];
@@ -49,7 +46,6 @@
 
     renderCategoryFilter();
     applyShopFilters();
-<<<<<<< HEAD
 
     if (isDirector) {
       const datalist = document.getElementById('p-categories');
@@ -58,8 +54,6 @@
         datalist.innerHTML = names.map((n) => `<option value="${escapeHtml(n)}">`).join('');
       }
     }
-=======
->>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
   }
 
   function getFilteredProducts() {
@@ -102,16 +96,10 @@
       return;
     }
     grid.innerHTML = list.map((p) => `
-<<<<<<< HEAD
       <div class="item-card item-card--product" data-product-id="${p.id}">
         <div class="item-card__cover">
           ${p.image ? `<img src="${escapeHtml(p.image)}" alt="${escapeHtml(p.name)}" loading="lazy">` : `<div class="item-card__cover--placeholder"><span>${escapeHtml(p.name[0])}</span></div>`}
           ${isDirector ? `<button class="item-card__remove" type="button" data-remove-id="${p.id}" aria-label="Удалить товар" title="Удалить товар">✕</button>` : ''}
-=======
-      <a class="item-card item-card--product" href="#" data-product-id="${p.id}">
-        <div class="item-card__cover">
-          ${p.image ? `<img src="${escapeHtml(p.image)}" alt="${escapeHtml(p.name)}" loading="lazy">` : `<div class="item-card__cover--placeholder"><span>${escapeHtml(p.name[0])}</span></div>`}
->>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
         </div>
         <div class="item-card__body">
           <h3 class="item-card__title">${escapeHtml(p.name)}</h3>
@@ -121,26 +109,17 @@
             <span class="badge ${p.type === 'steam' ? 'badge--gold' : 'badge--gray'}">${p.type === 'steam' ? 'Steam' : 'Физический'}</span>
           </div>
         </div>
-<<<<<<< HEAD
       </div>
-=======
-      </a>
->>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
     `).join('');
 
     grid.querySelectorAll('.item-card').forEach((card) => {
       card.addEventListener('click', (e) => {
-<<<<<<< HEAD
         if (e.target.closest('.item-card__remove')) return;
-=======
-        e.preventDefault();
->>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
         const id = Number(card.dataset.productId);
         const product = products.find((p) => p.id === id);
         if (product) openOrderModal(product);
       });
     });
-<<<<<<< HEAD
 
     grid.querySelectorAll('.item-card__remove').forEach((btn) => {
       btn.addEventListener('click', async (e) => {
@@ -157,8 +136,6 @@
         }
       });
     });
-=======
->>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
   }
 
   function openOrderModal(product) {
@@ -253,7 +230,6 @@
     }
   });
 
-<<<<<<< HEAD
   if (isDirector) {
     const productModal = document.getElementById('product-modal');
     const productForm = document.getElementById('product-form');
@@ -300,8 +276,6 @@
     });
   }
 
-=======
->>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
   if (user.role === 'student') {
     await loadBalance();
   }

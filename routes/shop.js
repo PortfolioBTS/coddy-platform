@@ -1,9 +1,5 @@
 const express = require('express');
-<<<<<<< HEAD
 const products = require('../db/products');
-=======
-const products = require('../data/products.json');
->>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
 const { requireAuth, requireRole } = require('../middleware/auth');
 const usersDb = require('../db/users');
 const alfacrm = require('../alfacrm');
@@ -12,33 +8,20 @@ const gdrive = require('../gdrive');
 const router = express.Router();
 
 router.get('/api/shop/products', requireAuth, (req, res) => {
-<<<<<<< HEAD
   const all = products.list();
   const categories = {};
   for (const p of all) {
-=======
-  const categories = {};
-  for (const p of products) {
->>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
     if (!categories[p.categoryId]) {
       categories[p.categoryId] = { id: p.categoryId, name: p.categoryName, type: p.type, products: [] };
     }
     categories[p.categoryId].products.push(p);
   }
-<<<<<<< HEAD
   res.json({ categories: Object.values(categories), products: all });
-=======
-  res.json({ categories: Object.values(categories), products });
->>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
 });
 
 router.post('/api/shop/order', requireAuth, requireRole('student'), async (req, res) => {
   const { productId, size, phone, city, steamCode } = req.body;
-<<<<<<< HEAD
   const product = products.getById(productId);
-=======
-  const product = products.find((p) => p.id === Number(productId));
->>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
   if (!product) {
     return res.status(400).json({ message: 'Товар не найден.' });
   }
@@ -98,11 +81,7 @@ router.post('/api/shop/order', requireAuth, requireRole('student'), async (req, 
 });
 
 router.get('/api/shop/orders', requireAuth, (req, res) => {
-<<<<<<< HEAD
   if (req.user.role === 'teacher' || req.user.role === 'director') {
-=======
-  if (req.user.role === 'teacher') {
->>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
     const allOrders = gdrive.getAllOrders();
     const students = usersDb.listStudents().map(usersDb.publicUser);
     const studentMap = {};

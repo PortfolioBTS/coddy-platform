@@ -10,7 +10,6 @@ router.get('/api/me', (req, res) => {
   res.json({ user: req.user });
 });
 
-<<<<<<< HEAD
 router.put('/api/profile', (req, res) => {
   if (!req.user) return res.status(401).json({ message: 'Не авторизован.' });
   const { firstName, lastName, city, phone, email, telegram, max } = req.body || {};
@@ -74,17 +73,10 @@ router.put('/api/profile', (req, res) => {
 });
 
 router.post('/api/register', async (req, res) => {
-  const { role, firstName, lastName, city, phone, email, password, passwordConfirm, birthDate, teacherCode, childLogins } = req.body || {};
+  const { role, firstName, lastName, city, phone, email, password, passwordConfirm, birthDate, teacherCode, childLogins, consent } = req.body || {};
   const errors = [];
 
   if (!['teacher', 'student', 'parent'].includes(role)) errors.push('Выберите роль: учитель, ученик или родитель.');
-=======
-router.post('/api/register', async (req, res) => {
-  const { role, firstName, lastName, city, phone, email, password, passwordConfirm, birthDate } = req.body || {};
-  const errors = [];
-
-  if (!['teacher', 'student'].includes(role)) errors.push('Выберите роль: учитель или ученик.');
->>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
   if (!firstName || !firstName.trim()) errors.push('Укажите имя.');
   if (!lastName || !lastName.trim()) errors.push('Укажите фамилию.');
   if (!city || !city.trim()) errors.push('Укажите город.');
@@ -92,8 +84,13 @@ router.post('/api/register', async (req, res) => {
   if (!email || !EMAIL_RE.test(email.trim())) errors.push('Укажите корректную электронную почту.');
   if (!password || password.length < 6) errors.push('Пароль должен быть не короче 6 символов.');
   if (password !== passwordConfirm) errors.push('Пароли не совпадают.');
+  // Согласие на обработку персональных данных, Пользовательское соглашение и
+  // Договор оферты — обязательная галочка на форме регистрации (см.
+  // public/register.html). Проверяем и на сервере — форму можно обойти.
+  if (consent !== true && consent !== 'true') {
+    errors.push('Необходимо согласиться с обработкой персональных данных, Пользовательским соглашением и Договором оферты.');
+  }
 
-<<<<<<< HEAD
   // Педагогом может стать только тот, кто получил код от директора школы.
   if (role === 'teacher') {
     const code = teacherCode == null ? '' : String(teacherCode).trim();
@@ -128,10 +125,6 @@ router.post('/api/register', async (req, res) => {
 
   let birthDateClean = null;
   if (role === 'student' && birthDate) {
-=======
-  let birthDateClean = null;
-  if (birthDate) {
->>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
     if (!/^\d{4}-\d{2}-\d{2}$/.test(birthDate) || Number.isNaN(new Date(birthDate).getTime())) {
       errors.push('Укажите корректную дату рождения.');
     } else {
@@ -149,7 +142,6 @@ router.post('/api/register', async (req, res) => {
     return res.status(400).json({ message: 'Не удалось зарегистрироваться.', errors });
   }
 
-<<<<<<< HEAD
   const user = await users.createUser({
     role,
     firstName,
@@ -161,10 +153,8 @@ router.post('/api/register', async (req, res) => {
     birthDate: birthDateClean,
     teacherCode: role === 'teacher' ? String(teacherCode || '').trim() : null,
     childIds: role === 'parent' ? childIds : undefined,
+    consentAcceptedAt: new Date().toISOString(),
   });
-=======
-  const user = await users.createUser({ role, firstName, lastName, city, phone, email, password, birthDate: birthDateClean });
->>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
   req.session.userId = user.id;
   res.status(201).json({ user: users.publicUser(user) });
 });
@@ -186,7 +176,6 @@ router.post('/api/logout', (req, res) => {
   req.session.destroy(() => res.json({ ok: true }));
 });
 
-<<<<<<< HEAD
 router.put('/api/password', async (req, res) => {
   if (!req.user) return res.status(401).json({ message: 'Не авторизован.' });
   const { currentPassword, newPassword, passwordConfirm } = req.body || {};
@@ -240,6 +229,4 @@ router.delete('/api/tg-id', (req, res) => {
   res.json({ user: users.publicUser(updated) });
 });
 
-=======
->>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
 module.exports = router;

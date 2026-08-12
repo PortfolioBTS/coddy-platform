@@ -151,7 +151,7 @@
       currentEntries = data.entries || [];
       monthInput.value = currentEntries.length ? currentEntries[0].month : currentMonthValue();
       renderHistoryChips();
-      syncFormToMonth();
+      await syncFormToMonth();
     } catch (err) {
       renderErrors(errorsBox, [err.message]);
     }
@@ -167,10 +167,10 @@
       <button type="button" class="tab-chip ${e.month === monthInput.value ? 'is-active' : ''}" data-month="${e.month}">${formatMonthLabel(e.month)}</button>
     `).join('')}</div>`;
     box.querySelectorAll('[data-month]').forEach((btn) => {
-      btn.addEventListener('click', () => {
+      btn.addEventListener('click', async () => {
         monthInput.value = btn.dataset.month;
-        syncFormToMonth();
         renderHistoryChips();
+        await syncFormToMonth();
       });
     });
   }
@@ -179,23 +179,63 @@
     return currentEntries.find((e) => e.month === month) || null;
   }
 
-  function syncFormToMonth() {
+  async function syncFormToMonth() {
     const month = monthInput.value;
     const entry = findEntryForMonth(month);
     removeFileIds = [];
 
-    setRange('feedback-hw', entry ? entry.homeworkPercent : 0);
     setRange('feedback-comm', entry ? entry.communicationScore : 0);
     setRange('feedback-progress', entry ? entry.progressScore : 0);
     document.getElementById('feedback-text').value = entry ? entry.teacherText : '';
     document.getElementById('feedback-notes').value = entry ? entry.focusNotes : '';
     document.getElementById('feedback-project-files').value = '';
     renderExistingFiles(entry ? entry.projectFiles : []);
+
+    // % дз: если за месяц уже есть сохранённый отзыв — показываем то значение,
+    // что оставил учитель; если отзыва ещё нет — сразу подставляем авто-расчёт
+    // (см. loadHomeworkAuto), а учитель может тут же его поправить руками.
+    setRange('feedback-hw', entry ? entry.homeworkPercent : 0);
     updateChartPreview();
 
     const delBtn = document.getElementById('feedback-delete-btn');
     delBtn.hidden = !entry;
     delBtn.dataset.id = entry ? entry.id : '';
+
+    await loadHomeworkAuto(month, !entry);
+  }
+
+  // Подтягивает авто-% выполненных дз за месяц (utils/homeworkStats.js на бэкенде).
+  // applyImmediately — подставить значение в слайдер сразу (для месяца без
+  // сохранённого отзыва); иначе просто показываем подсказку с кнопкой «подставить»,
+  // не трогая уже сохранённое учителем значение.
+  async function loadHomeworkAuto(month, applyImmediately) {
+    const row = document.getElementById('feedback-hw-auto-row');
+    const hint = document.getElementById('feedback-hw-auto-hint');
+    const applyBtn = document.getElementById('feedback-hw-auto-apply');
+    row.hidden = true;
+    applyBtn.onclick = null;
+
+    try {
+      const stats = await api.get(
+        `/api/teacher/feedback/courses/${currentStudent.courseId}/students/${currentStudent.id}/homework-auto?month=${encodeURIComponent(month)}`
+      );
+      // Пока запрос летел, учитель мог переключить месяц — не применяем устаревший ответ.
+      if (monthInput.value !== month) return;
+      if (stats.percent === null) return;
+
+      hint.textContent = `Авто-расчёт по сданным работам: ${stats.percent}% (сдано ${stats.completedCount} из ${stats.totalCount})`;
+      row.hidden = false;
+      applyBtn.onclick = () => {
+        setRange('feedback-hw', stats.percent);
+        updateChartPreview();
+      };
+      if (applyImmediately) {
+        setRange('feedback-hw', stats.percent);
+        updateChartPreview();
+      }
+    } catch (err) {
+      row.hidden = true;
+    }
   }
 
   function setRange(id, value) {
@@ -249,10 +289,10 @@
       });
     });
 
-    monthInput.addEventListener('change', () => {
+    monthInput.addEventListener('change', async () => {
       if (!monthInput.value) return;
-      syncFormToMonth();
       renderHistoryChips();
+      await syncFormToMonth();
     });
 
     document.querySelectorAll('#feedback-quick-notes [data-note]').forEach((btn) => {
@@ -291,7 +331,7 @@
         if (idx >= 0) currentEntries[idx] = entry; else currentEntries.push(entry);
         currentEntries.sort((a, b) => (a.month < b.month ? 1 : a.month > b.month ? -1 : 0));
         renderHistoryChips();
-        syncFormToMonth();
+        await syncFormToMonth();
         const status = document.getElementById('feedback-save-status');
         status.textContent = '✓ Сохранено';
         setTimeout(() => { status.textContent = ''; }, 2500);
@@ -310,7 +350,7 @@
         await api.postJson(`/api/teacher/feedback/${id}/delete`);
         currentEntries = currentEntries.filter((x) => x.id !== id);
         renderHistoryChips();
-        syncFormToMonth();
+        await syncFormToMonth();
       } catch (err) {
         renderErrors(errorsBox, [err.message]);
       }

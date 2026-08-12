@@ -1,5 +1,4 @@
 (async function () {
-<<<<<<< HEAD
   const path = window.location.pathname;
   const requiredRole = path.startsWith('/teacher/') ? 'teacher' : path.startsWith('/parent/') ? 'parent' : 'student';
   const user = await bootPage(requiredRole);
@@ -10,25 +9,15 @@
   const content = document.getElementById('content');
   let balance = null;
   let children = [];
+  let openAddChildModal = () => {};
 
   if (isStudent) {
-=======
-  const requiredRole = window.location.pathname.startsWith('/teacher/') ? 'teacher' : 'student';
-  const user = await bootPage(requiredRole);
-  if (!user) return;
-
-  document.getElementById('role-badge').textContent = user.role === 'teacher' ? 'Учитель' : 'Ученик';
-
-  let balance = null;
-  if (user.role === 'student') {
->>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
     try {
       const data = await api.get('/api/student/alfacrm/balance');
       balance = data.balance;
     } catch (_) {}
   }
 
-<<<<<<< HEAD
   if (isParent) {
     try {
       const data = await api.get('/api/parent/children');
@@ -37,28 +26,10 @@
   }
 
   // ---------- Тема ----------
-=======
-  const fields = [
-    ['Имя', user.firstName],
-    ['Фамилия', user.lastName],
-    ['Город', user.city],
-    ['Телефон', user.phone],
-    ['Электронная почта', user.email],
-    ['В журнале с', formatDate(user.createdAt)],
-  ];
-
-  if (user.role === 'student') {
-    const age = calcAge(user.birthDate);
-    fields.push(['Возраст', age != null ? String(age) : '—']);
-    fields.push(['Коддикоины', balance != null ? String(balance) : '—']);
-  }
-
->>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
   let currentTheme = localStorage.getItem('coddy-theme') || 'light';
   if (currentTheme === 'dark') currentTheme = 'gray';
   const themeLabels = { light: 'Светлая', dark: 'Тёмная', gray: 'Серая', coddyshop: 'CODDY' };
 
-<<<<<<< HEAD
   // ---------- Отображение ----------
   function roleLabelText() {
     if (isStudent) return 'Ученик';
@@ -108,7 +79,10 @@
 
       ${isParent ? `
       <div class="profile-section">
-        <div class="profile-section__title">Ваши дети</div>
+        <div class="profile-section__title" style="display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap;">
+          <span>Ваши дети</span>
+          <button class="btn btn--sm" type="button" id="add-child-btn">+ Добавить ребёнка</button>
+        </div>
         ${children.length ? `
           <div class="panel" style="margin:0;">
             ${children.map((c) => `
@@ -171,6 +145,15 @@
             </select>
           </div>
         </div>
+      </div>
+
+      <div class="profile-section">
+        <div class="profile-section__title">Правовые документы</div>
+        <div class="profile-settings">
+          <a class="btn" href="/legal/consent.html" target="_blank" rel="noopener">📄 Согласие на обработку персональных данных</a>
+          <a class="btn" href="/legal/user-agreement.html" target="_blank" rel="noopener">📄 Пользовательское соглашение</a>
+          <a class="btn" href="/legal/offer.html" target="_blank" rel="noopener">📄 Договор оферты</a>
+        </div>
       </div>`;
 
     document.getElementById('theme-select').addEventListener('change', (e) => {
@@ -181,6 +164,10 @@
 
     document.getElementById('edit-btn').addEventListener('click', openEditModal);
     document.getElementById('password-btn').addEventListener('click', openPasswordModal);
+
+    if (isParent) {
+      document.getElementById('add-child-btn').addEventListener('click', openAddChildModal);
+    }
 
     const tgInput = document.getElementById('tg-id-input');
     const tgSave = document.getElementById('tg-id-save');
@@ -334,27 +321,57 @@
     }
   });
 
-  render(user);
-=======
-  document.getElementById('content').innerHTML = `
-    ${fields.map(([label, value]) => `
-      <div class="profile-field">
-        <p class="profile-field__label">${escapeHtml(label)}</p>
-        <p class="profile-field__value">${escapeHtml(value)}</p>
-      </div>`).join('')}
-    <div class="profile-field">
-      <p class="profile-field__label">Тема оформления</p>
-      <select class="profile-theme-select" id="theme-select">
-        ${Object.entries(themeLabels).map(([val, label]) =>
-          `<option value="${val}"${val === currentTheme ? ' selected' : ''}>${label}</option>`
-        ).join('')}
-      </select>
-    </div>`;
+  // ---------- Добавление ребёнка (для родителя) ----------
+  if (isParent) {
+    const addChildForm = document.getElementById('add-child-form');
+    const addChildErrors = document.getElementById('add-child-errors');
+    const addChildLoginsList = document.getElementById('add-child-logins-list');
+    const addChildLoginRowBtn = document.getElementById('add-child-login-row');
 
-  document.getElementById('theme-select').addEventListener('change', (e) => {
-    const theme = e.target.value;
-    localStorage.setItem('coddy-theme', theme);
-    document.documentElement.setAttribute('data-theme', theme);
-  });
->>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
+    function addChildLoginRow() {
+      const row = document.createElement('div');
+      row.className = 'child-login-row';
+      row.innerHTML = `
+        <input class="input" type="text" name="childLogin" placeholder="Логин (почта) ребёнка" autocomplete="off">
+        <button type="button" class="btn btn--sm btn--danger child-login-row__remove" aria-label="Удалить">✕</button>
+      `;
+      addChildLoginsList.appendChild(row);
+      row.querySelector('.child-login-row__remove').addEventListener('click', () => {
+        if (addChildLoginsList.children.length > 1) row.remove();
+      });
+    }
+    addChildLoginRowBtn.addEventListener('click', addChildLoginRow);
+
+    openAddChildModal = function () {
+      renderErrors(addChildErrors, []);
+      addChildLoginsList.innerHTML = '<div class="child-login-row"><input class="input" type="text" name="childLogin" placeholder="Логин (почта) ребёнка" autocomplete="off"></div>';
+      document.getElementById('add-child-modal').hidden = false;
+    };
+
+    addChildForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      renderErrors(addChildErrors, []);
+      const childLogins = Array.from(addChildForm.querySelectorAll('input[name="childLogin"]'))
+        .map((el) => el.value.trim())
+        .filter(Boolean);
+      if (!childLogins.length) {
+        renderErrors(addChildErrors, ['Укажите логин хотя бы одного ребёнка.']);
+        return;
+      }
+      const btn = addChildForm.querySelector('button[type="submit"]');
+      btn.disabled = true;
+      try {
+        const data = await api.postJson('/api/parent/children', { childLogins });
+        children = data.children || [];
+        document.getElementById('add-child-modal').hidden = true;
+        render(user);
+      } catch (err) {
+        renderErrors(addChildErrors, err.errors || [err.message]);
+      } finally {
+        btn.disabled = false;
+      }
+    });
+  }
+
+  render(user);
 })();

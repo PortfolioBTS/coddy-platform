@@ -108,6 +108,33 @@
     </div>
   </div>
 
+  <!-- Модалка привязки ребёнка -->
+  <div class="modal-overlay" id="add-child-modal" hidden>
+    <div class="modal" role="dialog" aria-modal="true">
+      <span class="modal__ribbon">👪</span>
+      <button class="modal__close" type="button" data-modal-close aria-label="Закрыть">✕</button>
+      <h2 class="modal__title">Добавить ребёнка</h2>
+      <p class="modal__meta">Ребёнок должен быть уже зарегистрирован на платформе как ученик</p>
+      <form class="form" id="add-child-form">
+        <ul class="error-list" id="add-child-errors" hidden></ul>
+        <div class="field">
+          <span class="field__label">Логин ребёнка</span>
+          <div id="add-child-logins-list">
+            <div class="child-login-row">
+              <input class="input" type="text" name="childLogin" placeholder="Логин (почта) ребёнка" autocomplete="off">
+            </div>
+          </div>
+          <button type="button" class="btn btn--sm" id="add-child-login-row">+ Добавить ещё ребёнка</button>
+          <span class="field__hint">Логин — это почта, которой ребёнок входит на платформу.</span>
+        </div>
+        <div class="form-actions">
+          <button class="btn btn--red" type="submit">Добавить</button>
+          <button class="btn btn--ghost" type="button" data-modal-close>Отмена</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
   <script src="/js/utils.js"></script>
   <script src="/js/api.js"></script>
   <script src="/js/app-shell.js"></script>

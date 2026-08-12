@@ -11,11 +11,8 @@
     "bcryptjs": "^2.4.3",
     "express": "^4.19.2",
     "express-session": "^1.18.0",
-<<<<<<< HEAD
+    "iconv-lite": "^0.6.3",
     "multer": "^2.0.0",
     "xlsx": "^0.18.5"
-=======
-    "multer": "^2.0.0"
->>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
   }
 }

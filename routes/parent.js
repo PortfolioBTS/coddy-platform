@@ -49,6 +49,59 @@ router.get('/api/parent/children', (req, res) => {
   res.json({ children });
 });
 
+// Привязка ещё одного (уже зарегистрированного) ребёнка к аккаунту родителя —
+// по логину (почте), так же, как при регистрации родителя (routes/auth.js).
+// Принимает либо один childLogin, либо массив childLogins — можно добавить
+// сразу нескольких детей за один запрос.
+router.post('/api/parent/children', (req, res) => {
+  const rawLogins = []
+    .concat(req.body.childLogins || req.body.childLogin || [])
+    .map((l) => String(l || '').trim())
+    .filter(Boolean);
+
+  if (!rawLogins.length) {
+    return res.status(400).json({ message: 'Укажите логин хотя бы одного ребёнка.', errors: ['Укажите логин хотя бы одного ребёнка.'] });
+  }
+
+  const existingIds = Array.isArray(req.user.childIds) ? req.user.childIds : [];
+  const seenLogins = new Set();
+  const newIds = [];
+  const notFound = [];
+  const alreadyLinked = [];
+
+  rawLogins.forEach((login) => {
+    const key = login.toLowerCase();
+    if (seenLogins.has(key)) return;
+    seenLogins.add(key);
+
+    const child = usersDb.findByEmail(login);
+    if (!child || child.role !== 'student') {
+      notFound.push(login);
+      return;
+    }
+    if (existingIds.includes(child.id) || newIds.includes(child.id)) {
+      alreadyLinked.push(login);
+      return;
+    }
+    newIds.push(child.id);
+  });
+
+  const errors = [];
+  if (notFound.length) errors.push(`Не найден ученик с логином: ${notFound.join(', ')}.`);
+  if (alreadyLinked.length) errors.push(`Уже привязан(ы) к вашему аккаунту: ${alreadyLinked.join(', ')}.`);
+  if (errors.length) {
+    return res.status(400).json({ message: 'Не удалось добавить ребёнка.', errors });
+  }
+
+  const updated = usersDb.updateProfile(req.user.id, { childIds: [...existingIds, ...newIds] });
+  const children = (updated.childIds || [])
+    .map((id) => usersDb.getById(id))
+    .filter((u) => u && u.role === 'student')
+    .map(usersDb.publicUser);
+
+  res.status(201).json({ user: usersDb.publicUser(updated), children });
+});
+
 router.get('/api/parent/children/:childId/courses', (req, res) => {
   const child = ownChild(req, res);
   if (!child) return;

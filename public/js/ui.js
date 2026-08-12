@@ -10,13 +10,9 @@ function closeModal(id) {
 }
 
 // Общая проводка для любых модалок на странице: [data-modal-open="id"] открывает,
-<<<<<<< HEAD
 // [data-modal-close] внутри модалки закрывает. Клик по подложке окно НЕ закрывает,
 // чтобы не терять заполненные формы; закрытие — только через крестик, кнопку
 // «Отмена» или клавишу Escape.
-=======
-// [data-modal-close] внутри модалки закрывает, клик по подложке и Escape тоже закрывают.
->>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
 function initModals() {
   document.querySelectorAll('[data-modal-open]').forEach((btn) => {
     btn.addEventListener('click', () => openModal(btn.getAttribute('data-modal-open')));
@@ -25,12 +21,6 @@ function initModals() {
     const overlay = btn.closest('.modal-overlay');
     btn.addEventListener('click', () => { if (overlay) overlay.hidden = true; });
   });
-<<<<<<< HEAD
-=======
-  document.querySelectorAll('.modal-overlay').forEach((overlay) => {
-    overlay.addEventListener('click', (e) => { if (e.target === overlay) overlay.hidden = true; });
-  });
->>>>>>> af2d912928c4cd95ff2d6c055fda57dd8c4254a3
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') document.querySelectorAll('.modal-overlay').forEach((o) => { o.hidden = true; });
   });

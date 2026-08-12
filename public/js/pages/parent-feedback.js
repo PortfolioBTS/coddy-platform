@@ -130,7 +130,12 @@
       return;
     }
 
-    activeMonth = entries[0].month;
+    // По умолчанию открываем отзыв за прошедший календарный месяц (а не просто
+    // самый свежий из существующих) — так родитель сразу видит актуальный
+    // период. Если за прошлый месяц отзыва ещё нет, показываем самый
+    // последний из тех, что есть, но не выбираем его молча как «прошлый месяц».
+    const lastMonth = previousMonthValue();
+    activeMonth = entries.some((e) => e.month === lastMonth) ? lastMonth : entries[0].month;
     renderMonthSwitch();
     renderEntry();
   }
